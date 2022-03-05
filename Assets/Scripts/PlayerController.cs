@@ -53,6 +53,8 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.CompareTag("finish")) 
         {
+            GameObject.FindWithTag("Player").GetComponent<Animasyon>().OyunSonuAyari();
+
             // finishe collider eklenecek levellerde...
             // FINISH NOKTASINA GELINCE YAPILACAKLAR... Totalscore artırma, x işlemleri, efektler v.s. v.s.
             GameController.instance.isContinue = false;
