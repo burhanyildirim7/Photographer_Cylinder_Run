@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 83877366759f92e41ac25f5c6577db94
-timeCreated: 1445430665
+guid: 1ea00797689dff3458b90bb2f1469da4
+timeCreated: 1445430649
 licenseType: Store
 ModelImporter:
   serializedVersion: 18
@@ -119,7 +119,7 @@ ModelImporter:
     400108: ROOT
     400110: Spine
     400112: Spine1
-    7400000: 2HDeathC
+    7400000: UNRunF
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -129,7 +129,7 @@ ModelImporter:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     optimizeGameObjects: 0
-    motionNodeName: ROOT
+    motionNodeName: 
     animationCompression: 3
     animationRotationError: .5
     animationPositionError: .5
@@ -138,23 +138,23 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: 2HDeathC
+      name: UNRunF
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 56
+      lastFrame: 19
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
+      keepOriginalOrientation: 1
       keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
+      keepOriginalPositionXZ: 1
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
