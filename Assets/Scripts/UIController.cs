@@ -57,6 +57,8 @@ public class UIController : MonoBehaviour
 	// RESTART TUSUNA BASILDISINDA  --- LOOSE EKRANINDA
 	public void RestartButtonClick()
 	{
+		GameObject.FindWithTag("PhotographController").GetComponent<FotografController>().BaslangicAyarlari();
+
 		GamePanel.SetActive(false);
 		LoosePanel.SetActive(false);
 		TapToStartPanel.SetActive(true);
@@ -68,6 +70,8 @@ public class UIController : MonoBehaviour
 	// NEXT LEVEL TUSUNA BASILDIGINDA... WIN EKRANINDAKI BUTON
 	public void NextLevelButtonClick()
 	{
+		GameObject.FindWithTag("PhotographController").GetComponent<FotografController>().BaslangicAyarlari();
+
 		SetTapToStartScoreText();
 		TapToStartPanel.SetActive(true);
 		WinPanel.SetActive(false);

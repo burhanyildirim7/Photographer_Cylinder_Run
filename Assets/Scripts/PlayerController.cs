@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public bool xVarMi = true;
     public bool collectibleVarMi = true;
 
+    private WaitForSeconds beklemeSuresei1 = new WaitForSeconds(2.5f);
 
     private void Awake()
     {
@@ -53,6 +54,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.CompareTag("finish")) 
         {
+            GameObject.FindWithTag("PhotographController").GetComponent<FotografController>().DanscilariGetir();
             GameObject.FindWithTag("Player").GetComponent<Animasyon>().OyunSonuAyari();
 
             // finishe collider eklenecek levellerde...
@@ -60,12 +62,15 @@ public class PlayerController : MonoBehaviour
             GameController.instance.isContinue = false;
             GameController.instance.ScoreCarp(7);  // Bu fonksiyon normalde x ler hesaplandıktan sonra çağrılacak. Parametre olarak x i alıyor. 
             // x değerine göre oyuncunun total scoreunu hesaplıyor.. x li olmayan oyunlarda parametre olarak 1 gönderilecek.
-            UIController.instance.ActivateWinScreen(); // finish noktasına gelebildiyse her türlü win screen aktif edilecek.. ama burada değil..
+            StartCoroutine(OyunSonuEkraniniGeciktirir());
             // normal de bu kodu x ler hesaplandıktan sonra çağıracağız. Ve bu kod çağrıldığında da kazanılan puanlar animasyonlu şekilde artacak..
-
-            
         }
+    }
 
+    IEnumerator OyunSonuEkraniniGeciktirir()
+    {
+        yield return beklemeSuresei1;
+        UIController.instance.ActivateWinScreen(); // finish noktasına gelebildiyse her türlü win screen aktif edilecek.. ama burada değil..
     }
 
 

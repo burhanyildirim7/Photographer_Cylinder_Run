@@ -22,6 +22,11 @@ public class Animasyon : MonoBehaviour
         anim.SetBool("KosmaP", false);
     }
 
+    public void FotografCek()
+    {
+        anim.SetTrigger("FotoCekmeP");
+    }
+
     // Update is called once per frame
     void Update()
     {

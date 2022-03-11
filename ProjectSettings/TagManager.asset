@@ -11,6 +11,10 @@ TagManager:
   - finish
   - collectible
   - elmas
+  - Zemin
+  - Dansci
+  - PhotographController
+  - Engel
   layers:
   - Default
   - TransparentFX
