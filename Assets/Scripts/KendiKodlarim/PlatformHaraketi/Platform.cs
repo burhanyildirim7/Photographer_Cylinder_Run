@@ -18,7 +18,7 @@ public class Platform : MonoBehaviour
             Touch touch = Input.GetTouch(0);
             if (Input.GetTouch(0).phase == TouchPhase.Moved)
             {
-                transform.Rotate(Vector3.up * touch.deltaPosition.x * Time.deltaTime * -20);
+                transform.Rotate(Vector3.forward * touch.deltaPosition.x * Time.deltaTime * -20);
             }
         }
     }

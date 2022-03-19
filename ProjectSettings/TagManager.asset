@@ -15,6 +15,7 @@ TagManager:
   - Dansci
   - PhotographController
   - Engel
+  - Platform
   layers:
   - Default
   - TransparentFX

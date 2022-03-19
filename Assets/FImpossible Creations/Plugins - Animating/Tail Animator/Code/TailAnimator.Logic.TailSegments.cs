@@ -235,6 +235,7 @@ namespace FIMSpace.FTail
                 parent.ParentBone.ProceduralPositionWeightBlended = parent.ParentBone.ProceduralPosition;
             }
 
+
             TailSegments[_tc_startI].ChildBone.PreviousPosition += _waving_sustain;
 
         }

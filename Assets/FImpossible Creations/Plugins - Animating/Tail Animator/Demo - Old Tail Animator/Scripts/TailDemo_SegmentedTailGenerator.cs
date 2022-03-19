@@ -8,6 +8,7 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
     [Header("References", order = 1)]
     public TailAnimator2 TailWithSettings;
     public GameObject SegmentModel;
+    private GameObject ilkSegment;
 
     [Header("Parameters")]
     public int SegmentsCount = 10;
@@ -20,53 +21,14 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
     public bool DrawGizmos = true;
     public bool Cuttable = false;
 
-    void Start()
+    private GameObject hafizadakiResim;
+
+
+
+    public void BaslangicAyarlari()
     {
-        if (SegmentModel == null)
-        {
-            Debug.LogError("No Tail Segment Prefab");
-            return;
-        }
+        SegmentsCount = 0;
 
-        GetReferenceParameters();
-
-        List<Transform> tailSegments = new List<Transform>();
-        Transform preVSegment = transform;
-
-        for (int i = 0; i < SegmentsCount; i++)
-        {
-            Vector3 targetPos = transform.position + transform.TransformVector(referenceOffset * (0.1f + i));
-            GameObject segment = Instantiate(SegmentModel);
-            segment.transform.rotation = transform.rotation;
-            segment.transform.localScale = Vector3.up * transform.lossyScale.y / 1.5f + Vector3.right * transform.lossyScale.x / 20 + Vector3.forward * transform.lossyScale.x / 1.25f;// Vector3.up * transform.lossyScale.y / 1.5f + Vector3.right * transform.lossyScale.x / 20 + Vector3.forward * transform.lossyScale.x / 1.25f;     //transform.lossyScale;
-            segment.transform.SetParent(preVSegment, true);
-            segment.transform.position = targetPos;
-            preVSegment = segment.transform;
-
-            tailSegments.Add(segment.transform);
-
-            if (Cuttable)
-            {
-                TailDemo_TailCutId cutId = segment.AddComponent<TailDemo_TailCutId>();
-                cutId.index = i;
-                cutId.owner = this;
-                segment.AddComponent<BoxCollider>().isTrigger = true;
-            }
-        }
-
-        if (TailWithSettings)
-        {
-            TailWithSettings.DetachChildren = DetachForOptimization;
-            TailWithSettings.User_SetTailTransforms(tailSegments);
-            TailWithSettings.enabled = true;
-        }
-        else
-        {
-            TailWithSettings = gameObject.AddComponent<TailAnimator2>();
-            TailWithSettings.DetachChildren = DetachForOptimization;
-            TailWithSettings.User_SetTailTransforms(tailSegments);
-            TailWithSettings.enabled = true;
-        }
     }
 
     private void OnDrawGizmosSelected()
@@ -180,11 +142,10 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
         }
     }
 
-    bool dontReload = true;
+    bool dontReload = false;
 
     public void OnValidate()
     {
-        if (SegmentsCount < 2) SegmentsCount = 2;
 
         if (!Application.isPlaying) return;
         if (!Dynamic) return;
@@ -200,46 +161,124 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
         // Refreshing tail with new settings
         if (SegmentsCount != TailWithSettings.TailSegments.Count)
         {
-            if (SegmentsCount < TailWithSettings.TailSegments.Count) // Removing segments
+
+            TailAnimator2.TailSegment refSegment = TailWithSettings.TailSegments[TailWithSettings.TailSegments.Count - 1];
+            Transform iTr = TailWithSettings.TailSegments[TailWithSettings.TailSegments.Count - 1].transform;
+
+            int toAdd = SegmentsCount - TailWithSettings.TailSegments.Count;
+
+            for (int i = 0; i < toAdd; i++)
             {
-                //ExmapleCutAt(SegmentsCount);
-                if (TailWithSettings.TailSegments[SegmentsCount].transform)
-                    GameObject.Destroy(TailWithSettings.TailSegments[SegmentsCount].transform.gameObject);
+                Vector3 targetPos = iTr.position + refSegment.ParentToFrontOffset();
+                GameObject segment = Instantiate(SegmentModel);
+                segment.transform.rotation = refSegment.transform.rotation;
+                segment.transform.localScale = refSegment.transform.lossyScale;
+                segment.transform.parent = transform;
+                segment.transform.position = targetPos;
 
-                TailWithSettings.User_CutEndSegmentsTo(SegmentsCount);
-            }
-            else // Adding new segments
-            {
-                TailAnimator2.TailSegment refSegment = TailWithSettings.TailSegments[TailWithSettings.TailSegments.Count - 1];
-                Transform iTr = TailWithSettings.TailSegments[TailWithSettings.TailSegments.Count - 1].transform;
 
-                int toAdd = SegmentsCount - TailWithSettings.TailSegments.Count;
+                TailWithSettings.User_AddTailTransform(segment.transform);
 
-                for (int i = 0; i < toAdd; i++)
-                {
-                    Vector3 targetPos = iTr.position + refSegment.ParentToFrontOffset();
-                    //Vector3 targetPos = refSegment.transform.position + transform.TransformVector(referenceOffset * (0.1f + (i+1)));
-
-                    GameObject segment = Instantiate(SegmentModel);
-                    segment.transform.rotation = refSegment.transform.rotation;
-                    segment.transform.localScale = refSegment.transform.lossyScale;
-                    segment.transform.SetParent(iTr, true);
-                    segment.transform.position = targetPos;
-
-                    if (Cuttable)
-                    {
-                        TailDemo_TailCutId cutId = segment.AddComponent<TailDemo_TailCutId>();
-                        cutId.index = refSegment.Index + i;
-                        cutId.owner = this;
-                        segment.AddComponent<BoxCollider>();
-                    }
-
-                    TailWithSettings.User_AddTailTransform(segment.transform);
-
-                    iTr = segment.transform;
-                }
+                iTr = segment.transform;
 
             }
         }
     }
+
+
+    public void FotografEkle()
+    {
+        SegmentsCount++;
+        if (SegmentsCount == 1)
+        {
+            IlkResimiEkle();
+        }
+        else if (SegmentsCount == 2)
+        {
+            IkinciResimiEkle();
+        }
+        else if (SegmentsCount > 2)
+        {
+            OnValidate();
+        }
+
+    }
+
+    private void IlkResimiEkle()
+    {
+        ilkSegment = SegmentModel; //ikinci resim ekleme olayi biraz zorlu oldugu icin bole bir ekleme yapilmistir
+
+
+        Vector3 targetPos = transform.position + transform.TransformVector(referenceOffset * (0.1f));
+        GameObject segment = Instantiate(SegmentModel);
+        segment.transform.rotation = transform.rotation;
+        segment.transform.localScale = Vector3.up * transform.lossyScale.y / 1.5f + Vector3.right * transform.lossyScale.x / 40 + Vector3.forward * transform.lossyScale.x / 1.15f;// Vector3.up * transform.lossyScale.y / 1.5f + Vector3.right * transform.lossyScale.x / 20 + Vector3.forward * transform.lossyScale.x / 1.25f;     //transform.lossyScale;
+        segment.transform.parent = transform;
+        segment.transform.position = targetPos;
+
+        hafizadakiResim = segment;
+    }
+
+    private void IkinciResimiEkle()
+    {
+        Destroy(hafizadakiResim);
+
+        GetReferenceParameters();
+
+        List<Transform> tailSegments = new List<Transform>();
+        Transform preVSegment = transform;
+
+        for (int i = 0; i < SegmentsCount; i++)
+        {
+            Vector3 targetPos = transform.position + transform.TransformVector(referenceOffset * (0.1f + i * 1.35f));  //sagdaki sayi ile 1. ve 2. resim arasindaki fark ayarlanabilir
+            GameObject segment;
+
+            if (i == 0)
+            {
+                segment = Instantiate(ilkSegment);
+
+                segment.transform.rotation = transform.rotation;
+                segment.transform.localScale = Vector3.up * transform.lossyScale.y / 1.5f + Vector3.right * transform.lossyScale.x / 40 + Vector3.forward * transform.lossyScale.x / 1.15f;// Vector3.up * transform.lossyScale.y / 1.5f + Vector3.right * transform.lossyScale.x / 20 + Vector3.forward * transform.lossyScale.x / 1.25f;     //transform.lossyScale;
+                segment.transform.SetParent(preVSegment, true);
+                segment.transform.parent = transform;
+                segment.transform.position = targetPos;
+                preVSegment = segment.transform;
+
+                tailSegments.Add(segment.transform);
+            }
+            else if (i == 1)
+            {
+                segment = Instantiate(SegmentModel);
+
+                segment.transform.rotation = transform.rotation;
+                segment.transform.localScale = Vector3.up * transform.lossyScale.y / 1.5f + Vector3.right * transform.lossyScale.x / 40 + Vector3.forward * transform.lossyScale.x / 1.15f;// Vector3.up * transform.lossyScale.y / 1.5f + Vector3.right * transform.lossyScale.x / 20 + Vector3.forward * transform.lossyScale.x / 1.25f;     //transform.lossyScale;
+                segment.transform.SetParent(preVSegment, true);
+                segment.transform.parent = transform;
+                segment.transform.position = targetPos;
+                preVSegment = segment.transform;
+
+                tailSegments.Add(segment.transform);
+            }
+
+
+        }
+
+        if (TailWithSettings)
+        {
+            TailWithSettings.DetachChildren = DetachForOptimization;
+            TailWithSettings.User_SetTailTransforms(tailSegments);
+            TailWithSettings.enabled = true;
+        }
+        else
+        {
+            TailWithSettings = gameObject.AddComponent<TailAnimator2>();
+            TailWithSettings.DetachChildren = DetachForOptimization;
+            TailWithSettings.User_SetTailTransforms(tailSegments);
+            TailWithSettings.enabled = true;
+        }
+
+
+    }
+
+
 }
