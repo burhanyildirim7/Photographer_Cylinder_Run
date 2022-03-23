@@ -20,13 +20,13 @@ public class Dansci : MonoBehaviour
         platform = GameObject.FindWithTag("Platform");
         anim = transform.GetChild(0).GetComponent<Animator>();
 
-        anim.SetInteger("DansNumarasiP", dansNumarasi);
+       // anim.SetInteger("DansNumarasiP", dansNumarasi);
 
-        KarakteriZemineGoreCevir();
+       // KarakteriZemineGoreCevir();
     }
 
 
-    private void KarakteriZemineGoreCevir()
+  /*  private void KarakteriZemineGoreCevir()
     {
         if (Physics.Raycast(transform.position, Vector3.up * (platform.transform.position.y - transform.position.y) + Vector3.right * (platform.transform.position.x - transform.position.x), out hit, Mathf.Infinity))
         {
@@ -36,6 +36,6 @@ public class Dansci : MonoBehaviour
                 transform.rotation = Quaternion.FromToRotation(transform.right, hit.normal) * transform.rotation;
             }
         }
-    }
+    }*/
 
 }

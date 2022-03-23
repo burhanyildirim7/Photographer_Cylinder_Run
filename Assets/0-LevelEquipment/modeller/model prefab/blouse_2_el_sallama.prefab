@@ -4523,6 +4523,7 @@ GameObject:
   - component: {fileID: 1500661222028177807}
   - component: {fileID: 1742197393868032107}
   - component: {fileID: 8559317365763061535}
+  - component: {fileID: -3453585618020316044}
   m_Layer: 0
   m_Name: blouse_2_el_sallama
   m_TagString: Dansci
@@ -4575,6 +4576,26 @@ CapsuleCollider:
   m_Height: 2.5584238
   m_Direction: 1
   m_Center: {x: -1.3091539e-10, y: 0.779206, z: -0.007991791}
+--- !u!95 &-3453585618020316044
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2276776056243432245}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: cd5b1e8d1c74afe46a97e62e5e04d820, type: 3}
+  m_Controller: {fileID: 9100000, guid: 1d94d36f44f36c84b9027efb24761e7c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2285777831778626515
 GameObject:
   m_ObjectHideFlags: 0
