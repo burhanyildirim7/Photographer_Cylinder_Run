@@ -5,6 +5,7 @@ using UnityEngine;
 public class Dansci : MonoBehaviour
 {
     [Header("DansciAyarlari")]
+    public int karakterNumarasi;
     public int dansNumarasi;
 
 

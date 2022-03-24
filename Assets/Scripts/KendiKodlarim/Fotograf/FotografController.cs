@@ -56,7 +56,6 @@ public class FotografController : MonoBehaviour
         fotografCekilenler.Clear();
         tailGenerator = GameObject.FindObjectOfType<TailDemo_SegmentedTailGenerator>();
         tailGenerator.BaslangicAyarlari();
-
     }
 
 
@@ -87,7 +86,6 @@ public class FotografController : MonoBehaviour
     {
         tailGenerator.SegmentModel = fotograflar[fotografNumarasi];
         tailGenerator.FotografEkle();
-       
     }
 
     public void DanscilariGetir()
