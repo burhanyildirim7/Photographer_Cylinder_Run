@@ -7804,8 +7804,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4128038344187482078}
-  - component: {fileID: 3006508608560033769}
-  - component: {fileID: 9067340818101326516}
+  - component: {fileID: 4919270320752500706}
   m_Layer: 0
   m_Name: blouse_el_sallama
   m_TagString: Dansci
@@ -7831,33 +7830,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3006508608560033769
-MonoBehaviour:
+--- !u!95 &4919270320752500706
+Animator:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3603563238136796516}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6586b53ea5b13f4eabc5fd772fc57af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dansNumarasi: 0
---- !u!136 &9067340818101326516
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3603563238136796516}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.2999897
-  m_Height: 2.253621
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.8934126, z: 0.0061016083}
+  m_Avatar: {fileID: 9000000, guid: cd5b1e8d1c74afe46a97e62e5e04d820, type: 3}
+  m_Controller: {fileID: 9100000, guid: 1d94d36f44f36c84b9027efb24761e7c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'root'\n\tTransform 'root'\n\tFrom animation
+    clip 'Idle'"
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3612556217545479554
 GameObject:
   m_ObjectHideFlags: 0
