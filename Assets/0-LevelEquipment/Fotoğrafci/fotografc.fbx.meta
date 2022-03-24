@@ -1,14 +1,23 @@
 fileFormatVersion: 2
-guid: a63f42c613ea2fe4c9c5c7e39d3ef61e
+guid: bdbf75157b726334ca829826eef1f8d3
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
-      74: 3374748389425109202
-    second: rig|rigAction
+      74: 897416347498962653
+    second: Sneakers|Camera|Take 001|Layer 001
   - first:
-      74: -6349712302489538049
-    second: rig|root|Take 001|BaseLayer
+      74: 3510388227842717530
+    second: Sneakers|Directional Light|Take 001|Layer 001
+  - first:
+      74: -6381917475265104814
+    second: Sneakers|Mesh|Take 001|Layer 001
+  - first:
+      74: 1672828383704312609
+    second: Sneakers|Sneakers|Take 001|BaseLayer
+  - first:
+      74: 8566489619317755886
+    second: Sneakers|Texture Group|Take 001|Layer 001
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -37,65 +46,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: rig|rigAction
-      takeName: rig|rigAction
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 31
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: rig|root|Take 001|BaseLayer
-      takeName: rig|root|Take 001|BaseLayer
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 1
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []

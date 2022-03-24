@@ -16571,8 +16571,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6961679432513496455}
-  - component: {fileID: 2433972341978020255}
-  - component: {fileID: 4421359005712576516}
+  - component: {fileID: 5609864898884781338}
   m_Layer: 0
   m_Name: hotpants_el_sallama
   m_TagString: Dansci
@@ -16598,33 +16597,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2433972341978020255
-MonoBehaviour:
+--- !u!95 &5609864898884781338
+Animator:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7770690830539194173}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6586b53ea5b13f4eabc5fd772fc57af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dansNumarasi: 0
---- !u!136 &4421359005712576516
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7770690830539194173}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.2864889
-  m_Height: 2.2360165
-  m_Direction: 1
-  m_Center: {x: 0.009410083, y: 0.94973123, z: -0.0068058074}
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 418bdac11a54146b8b48b35078a399f5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7779694795966775259
 GameObject:
   m_ObjectHideFlags: 0
