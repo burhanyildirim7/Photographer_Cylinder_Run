@@ -82,12 +82,6 @@ public class FotografController : MonoBehaviour
         }
     }
 
-    private void FotografEkle(int fotografNumarasi)
-    {
-        tailGenerator.SegmentModel = fotograflar[fotografNumarasi];
-        tailGenerator.FotografEkle();
-    }
-
     public void DanscilariGetir()
     {
         for (int i = 0; i < fotografCekilenler.Count; i++)
@@ -101,5 +95,15 @@ public class FotografController : MonoBehaviour
     }
 
 
+    private IEnumerator Bekleme0(int fotografNumarasi)
+    {
+        yield return new WaitForSeconds(1);
+        Instantiate(fotograflar[fotografNumarasi], player.transform.position , Quaternion.identity);
+    }
 
+    public void FotografEkle(int fotografNumarasi)
+    {
+        tailGenerator.SegmentModel = fotograflar[fotografNumarasi];
+        tailGenerator.FotografEkle();
+    }
 }

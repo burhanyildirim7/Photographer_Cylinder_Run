@@ -8206,6 +8206,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4352117048900202646}
   - component: {fileID: 5405530074408802222}
+  - component: {fileID: 492645529607501754}
+  - component: {fileID: 398938983207852028}
   m_Layer: 0
   m_Name: Tblouse_el_sallama
   m_TagString: Dansci
@@ -8251,6 +8253,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &492645529607501754
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3976119684351027756}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.430647
+  m_Direction: 1
+  m_Center: {x: 0.00000009295715, y: 1.2055537, z: 0.0000022864624}
+--- !u!114 &398938983207852028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3976119684351027756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6586b53ea5b13f4eabc5fd772fc57af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  karakterNumarasi: 0
+  dansNumarasi: 0
 --- !u!1 &3994269714261763315
 GameObject:
   m_ObjectHideFlags: 0
