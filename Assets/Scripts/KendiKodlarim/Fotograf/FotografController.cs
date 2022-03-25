@@ -13,7 +13,8 @@ public class FotografController : MonoBehaviour
     [SerializeField] private ParticleSystem fotografEfekt;
 
     [Header("Animasyon")]
-    private Animasyon animasyon;
+    private Animasyon animasyon;// karakterin yurume moduna hemen baslamamasi icin kullanilmak
+    private KarakterPaketiMovement karakterPaketiMovement; //Karakterin 1sn ligine haraket etmemsi icin kullanilmaktadir
 
     [Header("Fotografci")]
     private GameObject player;
@@ -30,7 +31,7 @@ public class FotografController : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        
+        karakterPaketiMovement = GameObject.FindObjectOfType<KarakterPaketiMovement>(); 
 
         StartCoroutine(FotografCek());
         animasyon = player.GetComponent<Animasyon>();
@@ -39,7 +40,7 @@ public class FotografController : MonoBehaviour
 
     public void BaslangicAyarlari() //Oyun tekrar basladiginda buraya gelinir
     {
-        if(tailExampeObject.transform.parent.childCount >= 2)
+        if (tailExampeObject.transform.parent.childCount >= 2)
         {
             Destroy(tailExampeObject.transform.parent.transform.GetChild(1).transform.gameObject);
         }
@@ -49,7 +50,7 @@ public class FotografController : MonoBehaviour
             Destroy(transform.GetChild(i).transform.gameObject);
         }
 
-        GameObject obje = Instantiate(tailExampeObject, tailExampeObject.transform.position , tailExampeObject.transform.rotation);
+        GameObject obje = Instantiate(tailExampeObject, tailExampeObject.transform.position, tailExampeObject.transform.rotation);
         obje.transform.parent = tailExampeObject.transform.parent;
         obje.SetActive(true);
 
@@ -72,6 +73,7 @@ public class FotografController : MonoBehaviour
                     Instantiate(fotografEfekt, player.transform.position + Vector3.up * .8f + Vector3.forward * 1.35f, Quaternion.identity).Play();
                     fotografCekilenler.Add(hit.transform.gameObject);
                     animasyon.FotografCek();
+                    karakterPaketiMovement.StartCoroutine("SaniyelikDurdur");
 
 
                     Dansci dansci = hit.transform.gameObject.GetComponent<Dansci>();
@@ -98,12 +100,15 @@ public class FotografController : MonoBehaviour
     private IEnumerator Bekleme0(int fotografNumarasi)
     {
         yield return new WaitForSeconds(1);
-        Instantiate(fotograflar[fotografNumarasi], player.transform.position , Quaternion.identity);
+        Instantiate(fotograflar[fotografNumarasi], player.transform.position, Quaternion.identity);
     }
 
     public void FotografEkle(int fotografNumarasi)
     {
-        tailGenerator.SegmentModel = fotograflar[fotografNumarasi];
+        GameObject obje = Instantiate(fotograflar[fotografNumarasi], player.transform.position, Quaternion.identity);
+
+        // tailGenerator.SegmentModel = fotograflar[fotografNumarasi];
+        tailGenerator.SegmentModel = obje.transform.GetChild(0).transform.gameObject;
         tailGenerator.FotografEkle();
     }
 }

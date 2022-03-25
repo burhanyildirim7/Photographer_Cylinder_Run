@@ -7,6 +7,9 @@ public class Animasyon : MonoBehaviour
     [Header("AnimasyonIcinGerekli")]
     private Animator anim;
 
+
+    private WaitForSeconds beklemeSuresi0 = new WaitForSeconds(1);
+
     void Start()
     {
         anim = transform.GetChild(0).GetComponent<Animator>();
@@ -25,11 +28,14 @@ public class Animasyon : MonoBehaviour
     public void FotografCek()
     {
         anim.SetTrigger("FotoCekmeP");
+        anim.SetBool("KosmaP", false);
+        StartCoroutine(SaniyelikDurdur());
     }
 
-    // Update is called once per frame
-    void Update()
+
+    IEnumerator SaniyelikDurdur()
     {
-       
+        yield return beklemeSuresi0;
+        anim.SetBool("KosmaP", true);
     }
 }
