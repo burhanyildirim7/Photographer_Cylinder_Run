@@ -26,7 +26,6 @@ public class PlayerController : MonoBehaviour
         fotografController = GameObject.FindObjectOfType<FotografController>();
         animasyon = GameObject.FindObjectOfType<Animasyon>();
         karakterPaketiMovement = GameObject.FindObjectOfType<KarakterPaketiMovement>();
-
     }
 
     void Start()
@@ -64,7 +63,6 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.CompareTag("finish")) 
         {
-            fotografController.DanscilariGetir();
             animasyon.OyunSonuAyari();
             karakterPaketiMovement.kosuDurumu = false;
 

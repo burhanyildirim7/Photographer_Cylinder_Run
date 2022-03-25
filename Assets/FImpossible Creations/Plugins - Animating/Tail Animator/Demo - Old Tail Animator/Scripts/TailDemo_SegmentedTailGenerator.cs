@@ -65,7 +65,9 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
 
         MeshRenderer mesh = SegmentModel.GetComponentInChildren<MeshRenderer>();
         if (mesh)
-            referenceOffset = SegmentSeparation * mesh.bounds.extents.z * 2f;
+        {
+            referenceOffset = SegmentSeparation * mesh.bounds.extents.z * 2;
+        }
     }
 
 
@@ -185,6 +187,14 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            FotografEkle();
+        }
+    }
+
 
     public void FotografEkle()
     {
@@ -238,7 +248,7 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
                 segment = Instantiate(ilkSegment);
 
                 segment.transform.rotation = transform.rotation;
-                segment.transform.localScale = Vector3.up * transform.lossyScale.y / 1.5f + Vector3.right * transform.lossyScale.x / 40 + Vector3.forward * transform.lossyScale.x / 1.15f;// Vector3.up * transform.lossyScale.y / 1.5f + Vector3.right * transform.lossyScale.x / 20 + Vector3.forward * transform.lossyScale.x / 1.25f;     //transform.lossyScale;
+                segment.transform.localScale = Vector3.up * transform.lossyScale.y / 1.5f + Vector3.right * transform.lossyScale.x / 40 + Vector3.forward * transform.lossyScale.x / 1f;// Vector3.up * transform.lossyScale.y / 1.5f + Vector3.right * transform.lossyScale.x / 20 + Vector3.forward * transform.lossyScale.x / 1.25f;     //transform.lossyScale;
                 segment.transform.SetParent(preVSegment, true);
                 segment.transform.parent = transform;
                 segment.transform.position = targetPos;
@@ -251,7 +261,7 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
                 segment = Instantiate(SegmentModel);
 
                 segment.transform.rotation = transform.rotation;
-                segment.transform.localScale = Vector3.up * transform.lossyScale.y / 1.5f + Vector3.right * transform.lossyScale.x / 40 + Vector3.forward * transform.lossyScale.x / 1.15f;// Vector3.up * transform.lossyScale.y / 1.5f + Vector3.right * transform.lossyScale.x / 20 + Vector3.forward * transform.lossyScale.x / 1.25f;     //transform.lossyScale;
+                segment.transform.localScale = Vector3.up * transform.lossyScale.y / 1.5f + Vector3.right * transform.lossyScale.x / 40 + Vector3.forward * transform.lossyScale.x / 1f;// Vector3.up * transform.lossyScale.y / 1.5f + Vector3.right * transform.lossyScale.x / 20 + Vector3.forward * transform.lossyScale.x / 1.25f;     //transform.lossyScale;
                 segment.transform.SetParent(preVSegment, true);
                 segment.transform.parent = transform;
                 segment.transform.position = targetPos;

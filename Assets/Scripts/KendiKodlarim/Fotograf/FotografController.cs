@@ -7,7 +7,6 @@ public class FotografController : MonoBehaviour
 
     [Header("FotografCekmeAyarlari")]
     RaycastHit hit;
-    private List<GameObject> fotografCekilenler = new List<GameObject>();
 
     [Header("Efektler")]
     [SerializeField] private ParticleSystem fotografEfekt;
@@ -54,7 +53,6 @@ public class FotografController : MonoBehaviour
         obje.transform.parent = tailExampeObject.transform.parent;
         obje.SetActive(true);
 
-        fotografCekilenler.Clear();
         tailGenerator = GameObject.FindObjectOfType<TailDemo_SegmentedTailGenerator>();
         tailGenerator.BaslangicAyarlari();
     }
@@ -71,7 +69,6 @@ public class FotografController : MonoBehaviour
                 {
                     hit.transform.gameObject.GetComponent<CapsuleCollider>().enabled = false;
                     Instantiate(fotografEfekt, player.transform.position + Vector3.up * .8f + Vector3.forward * 1.35f, Quaternion.identity).Play();
-                    fotografCekilenler.Add(hit.transform.gameObject);
                     animasyon.FotografCek();
                     karakterPaketiMovement.StartCoroutine("SaniyelikDurdur");
 
@@ -84,17 +81,6 @@ public class FotografController : MonoBehaviour
         }
     }
 
-    public void DanscilariGetir()
-    {
-        for (int i = 0; i < fotografCekilenler.Count; i++)
-        {
-            fotografCekilenler[i].SetActive(true);
-            fotografCekilenler[i].transform.rotation = Quaternion.Euler(Vector3.up * 90 + Vector3.forward * 90);
-            fotografCekilenler[i].transform.position = player.transform.position + Vector3.forward * (i + 1) * 3 - Vector3.up * .95f;
-
-            fotografCekilenler[i].transform.parent = transform.root;
-        }
-    }
 
 
     private IEnumerator Bekleme0(int fotografNumarasi)

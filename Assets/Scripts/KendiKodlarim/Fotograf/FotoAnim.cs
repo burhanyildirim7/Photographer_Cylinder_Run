@@ -21,6 +21,12 @@ public class FotoAnim : MonoBehaviour
 
     public void ResimEkle()
     {
+        StartCoroutine(Geciktir());
+    }
+
+    IEnumerator Geciktir()
+    {
+        yield return new WaitForSeconds(.02f);
         fotografController.FotografYerineKoy();
         transform.parent.transform.gameObject.SetActive(false);
     }
