@@ -77,7 +77,7 @@ public class FotografController : MonoBehaviour
 
 
                     Dansci dansci = hit.transform.gameObject.GetComponent<Dansci>();
-                    FotografEkle(dansci.dansNumarasi);
+                    FotografAnimOynat(dansci.dansNumarasi);
                 }
             }
             yield return beklemeSuresei1;
@@ -103,10 +103,20 @@ public class FotografController : MonoBehaviour
         Instantiate(fotograflar[fotografNumarasi], player.transform.position, Quaternion.identity);
     }
 
-    public void FotografEkle(int fotografNumarasi)
-    {
-        GameObject obje = Instantiate(fotograflar[fotografNumarasi], player.transform.position, Quaternion.identity);
 
+    GameObject obje;
+    Animation animObje;
+
+    public void FotografAnimOynat(int fotografNumarasi)
+    {
+        obje = Instantiate(fotograflar[fotografNumarasi], player.transform.position, Quaternion.identity);
+        animObje = obje.transform.GetChild(0).GetComponent<Animation>();
+        animObje.Play("fotograf");
+    }
+
+
+    public void FotografYerineKoy()
+    {
         // tailGenerator.SegmentModel = fotograflar[fotografNumarasi];
         tailGenerator.SegmentModel = obje.transform.GetChild(0).transform.gameObject;
         tailGenerator.FotografEkle();

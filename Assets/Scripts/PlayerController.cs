@@ -13,10 +13,20 @@ public class PlayerController : MonoBehaviour
 
     private WaitForSeconds beklemeSuresei1 = new WaitForSeconds(2.5f);
 
+    [Header("AyarDuzenleyiciComponentler")]
+    private FotografController fotografController;
+    private Animasyon animasyon;
+    private KarakterPaketiMovement karakterPaketiMovement;
+
     private void Awake()
     {
         if (instance == null) instance = this;
         //else Destroy(this);
+
+        fotografController = GameObject.FindObjectOfType<FotografController>();
+        animasyon = GameObject.FindObjectOfType<Animasyon>();
+        karakterPaketiMovement = GameObject.FindObjectOfType<KarakterPaketiMovement>();
+
     }
 
     void Start()
@@ -54,8 +64,9 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.CompareTag("finish")) 
         {
-            GameObject.FindWithTag("PhotographController").GetComponent<FotografController>().DanscilariGetir();
-            GameObject.FindWithTag("Player").GetComponent<Animasyon>().OyunSonuAyari();
+            fotografController.DanscilariGetir();
+            animasyon.OyunSonuAyari();
+            karakterPaketiMovement.kosuDurumu = false;
 
             // finishe collider eklenecek levellerde...
             // FINISH NOKTASINA GELINCE YAPILACAKLAR... Totalscore artırma, x işlemleri, efektler v.s. v.s.
