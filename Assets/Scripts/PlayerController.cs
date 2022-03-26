@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
     private Animasyon animasyon;
     private KarakterPaketiMovement karakterPaketiMovement;
 
+    [Header("ResimAyarlari")]
+    private TailDemo_SegmentedTailGenerator tailDemo_SegmentedTailGenerator;
+
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -50,16 +53,16 @@ public class PlayerController : MonoBehaviour
         else if (other.CompareTag("engel"))
         {
             // ENGELELRE CARPINCA YAPILACAKLAR....
-            GameController.instance.SetScore(-collectibleDegeri); // ORNEK KULLANIM detaylar icin ctrl+click yapip fonksiyon aciklamasini oku
-            if (GameController.instance.score < 0) // SKOR SIFIRIN ALTINA DUSTUYSE
-			{
-                // FAİL EVENTLERİ BURAYA YAZILACAK..
-                GameController.instance.isContinue = false; // çarptığı anda oyuncunun yerinde durması ilerlememesi için
-                UIController.instance.ActivateLooseScreen(); // Bu fonksiyon direk çağrılada bilir veya herhangi bir effect veya animasyon bitiminde de çağrılabilir..
-                // oyuncu fail durumunda bu fonksiyon çağrılacak.. 
-			}
+            /*  GameController.instance.SetScore(-collectibleDegeri); // ORNEK KULLANIM detaylar icin ctrl+click yapip fonksiyon aciklamasini oku
+              if (GameController.instance.score < 0) // SKOR SIFIRIN ALTINA DUSTUYSE
+              {
+                  // FAİL EVENTLERİ BURAYA YAZILACAK..
+                  GameController.instance.isContinue = false; // çarptığı anda oyuncunun yerinde durması ilerlememesi için
+                  UIController.instance.ActivateLooseScreen(); // Bu fonksiyon direk çağrılada bilir veya herhangi bir effect veya animasyon bitiminde de çağrılabilir..
+                  // oyuncu fail durumunda bu fonksiyon çağrılacak.. 
+              }*/
 
-
+            tailDemo_SegmentedTailGenerator.ResimDusur(); //Eğer 3 veya daha fazla resim varsa yeni resim olusturulur
         }
         else if (other.CompareTag("finish")) 
         {
@@ -88,7 +91,6 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void StartingEvents()
     {
-
         transform.parent.transform.rotation = Quaternion.Euler(0, 0, 0);
         transform.parent.transform.position = Vector3.zero;
         GameController.instance.isContinue = false;
@@ -96,6 +98,12 @@ public class PlayerController : MonoBehaviour
         transform.position = new Vector3(0, transform.position.y, 0);
         GetComponent<Collider>().enabled = true;
 
+        YeniTaileEris();
+    }
+
+    public void YeniTaileEris()
+    {
+        tailDemo_SegmentedTailGenerator = GameObject.FindObjectOfType<TailDemo_SegmentedTailGenerator>();
     }
 
 }

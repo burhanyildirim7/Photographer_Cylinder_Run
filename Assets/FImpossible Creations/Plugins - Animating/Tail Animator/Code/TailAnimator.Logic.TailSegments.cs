@@ -236,7 +236,7 @@ namespace FIMSpace.FTail
             }
 
 
-            TailSegments[_tc_startI].ChildBone.PreviousPosition += _waving_sustain;
+         //   TailSegments[_tc_startI].ChildBone.PreviousPosition += _waving_sustain;
 
         }
 

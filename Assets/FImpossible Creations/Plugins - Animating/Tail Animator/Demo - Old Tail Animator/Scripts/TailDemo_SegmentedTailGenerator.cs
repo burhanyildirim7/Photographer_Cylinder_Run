@@ -23,12 +23,23 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
 
     private GameObject hafizadakiResim;
 
+    public GameObject KendiKopyasi;//Her resim dusecegi sirada yenisi olusturulur
+    private PlayerController playerController;
+    private FotografController fotografController;
+
+
+    void Awake()
+    {
+        KendiKopyasi = Resources.Load("Kopya") as GameObject;
+        playerController = FindObjectOfType<PlayerController>();
+        fotografController = FindObjectOfType<FotografController>();
+        BaslangicAyarlari();
+    }
 
 
     public void BaslangicAyarlari()
     {
         SegmentsCount = 0;
-
     }
 
     private void OnDrawGizmosSelected()
@@ -148,7 +159,28 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
 
     public void ResimDusur()
     {
+        if(SegmentsCount >= 3)
+        {
+            SegmentsCount--;
+            OnValidate();
+        }
+        else if(SegmentsCount <= 2 && SegmentsCount >= 1)
+        {
+            SegmentsCount--;
 
+            GameObject obje = Instantiate(KendiKopyasi, transform.position, transform.rotation); //Rotasyon sonra ayarlanabilir
+            obje.transform.parent = transform.parent;
+            playerController.YeniTaileEris();
+            fotografController.YeniTaileEris();
+
+            if(SegmentsCount >= 1)
+            {
+                obje.transform.gameObject.GetComponent<TailDemo_SegmentedTailGenerator>().FotografEkle();
+            }
+
+          //  TailWithSettings.User_AddTailTransform.Remove(1);
+            Destroy(this.transform.gameObject);
+        }
     }
 
     bool dontReload = false;

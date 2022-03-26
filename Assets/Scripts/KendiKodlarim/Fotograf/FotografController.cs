@@ -57,6 +57,11 @@ public class FotografController : MonoBehaviour
         tailGenerator.BaslangicAyarlari();
     }
 
+    public void YeniTaileEris()
+    {
+        tailGenerator = GameObject.FindObjectOfType<TailDemo_SegmentedTailGenerator>();
+    }
+
 
 
     IEnumerator FotografCek()

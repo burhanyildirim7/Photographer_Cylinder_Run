@@ -715,7 +715,6 @@ Transform:
   m_Children:
   - {fileID: 9082447899360500441}
   - {fileID: 6747957758580632662}
-  - {fileID: 5413471191988519820}
   m_Father: {fileID: 2018247888}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5783,14 +5782,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5413471191988519859}
-  m_LocalRotation: {x: -0.2827458, y: -0.038180623, z: 0.085445985, w: 0.9546183}
-  m_LocalPosition: {x: 0.53430843, y: 0.35035038, z: 0.0052636224}
-  m_LocalScale: {x: 0.35000005, y: 0.34999973, z: 0.3499998}
+  m_LocalRotation: {x: 0.6898072, y: 0.22916539, z: -0.68652964, w: 0.01806783}
+  m_LocalPosition: {x: 0.137, y: 0.137, z: -0.006}
+  m_LocalScale: {x: 0.35000005, y: 0.34999967, z: 0.3499996}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1443049508}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 15.665, y: 8, z: 247.147}
+  m_Father: {fileID: 6490445358105954458}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 160.148, y: 86.544, z: 341.95502}
 --- !u!114 &5413471191988519821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6689,13 +6688,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TailWithSettings: {fileID: 5413471191988519821}
   SegmentModel: {fileID: 4358687438776616636, guid: 575b388eb70c6c743a62e8e29cdac121, type: 3}
-  SegmentsCount: 0
+  SegmentsCount: 5
   SegmentSeparation: {x: 0, y: 0, z: -28}
   DetachForOptimization: 0
   Dynamic: 1
   AddTailAnimToCuttedSegment: 1
   DrawGizmos: 1
   Cuttable: 1
+  KendiKopyasi: {fileID: 5413471192486833122, guid: 3108b8fcea2e5624d84e020ac46001c0, type: 3}
 --- !u!1 &5413471191988519859
 GameObject:
   m_ObjectHideFlags: 0
@@ -7148,6 +7148,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6932239983926739706}
+  - {fileID: 5413471191988519820}
   m_Father: {fileID: 3081682106970841655}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

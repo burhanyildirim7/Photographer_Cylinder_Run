@@ -83,7 +83,7 @@
                 for (int i = 0; i < framesToSimulate; i++) // Simulating update frames
                     SimulateTailMotionFrame(postProcesses);
 
-                // Updating root bone position
+                // Updating root bone positionz
                 TailSegments[_tc_startI].transform.position = TailSegments[_tc_startI].ProceduralPositionWeightBlended;
                 TailSegments[_tc_startI].RefreshFinalPos(TailSegments[_tc_startI].ProceduralPositionWeightBlended);
                 //TailSegments[_tc_startI].RefreshFinalLocalPos(TailSegments[_tc_startI].transform.localPosition);

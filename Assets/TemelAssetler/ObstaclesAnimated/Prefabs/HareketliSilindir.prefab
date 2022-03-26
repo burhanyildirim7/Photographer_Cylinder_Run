@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 6694955607849525356}
   m_LocalRotation: {x: -0.49991274, y: 0.50008726, z: 0.49991274, w: 0.50008726}
   m_LocalPosition: {x: 2.5, y: 0.5, z: 37.7617}
-  m_LocalScale: {x: 60, y: 170, z: 100}
+  m_LocalScale: {x: 59.999977, y: 169.99992, z: 179.99994}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8401435280565232193}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 7257341698570393797}
   m_Layer: 0
   m_Name: Cylinder.001
-  m_TagString: DegersizEsya
+  m_TagString: engel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,7 +181,7 @@ Animator:
   m_GameObject: {fileID: 6859932732196540835}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2ae7fd31c4dbdae4ea58dc752fa584ce, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

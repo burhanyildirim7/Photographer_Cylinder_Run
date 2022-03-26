@@ -87,6 +87,12 @@ namespace FIMSpace.FTail
                 updateTailAnimator = false;
                 return;
             }
+            else if(TailSegments.Count >= 1)
+            {
+                initialized = true;
+                updateTailAnimator = true;
+                return;
+            }
 
 
             // Enabling / disabling with blending value
