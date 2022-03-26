@@ -30,4 +30,19 @@ public class FotoAnim : MonoBehaviour
         fotografController.FotografYerineKoy();
         transform.parent.transform.gameObject.SetActive(false);
     }
+
+    public void KonumaGonder(Vector3 konum)
+    {
+        StartCoroutine(HaraketEttir(konum));
+    }
+
+    IEnumerator HaraketEttir(Vector3 konum)
+    {
+        while(Vector3.Distance(transform.position, konum) >= .1f)
+        {
+            transform.position = Vector3.Lerp(transform.position, konum, Time.deltaTime * 2.5f);
+            transform.rotation = Quaternion.Slerp(transform.rotation , Quaternion.Euler(Vector3.up * 90 + Vector3.forward * 15), Time.deltaTime * 10);
+            yield return null;
+        }
+    }
 }

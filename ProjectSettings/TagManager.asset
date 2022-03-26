@@ -16,6 +16,7 @@ TagManager:
   - PhotographController
   - Engel
   - Platform
+  - Noktalar
   layers:
   - Default
   - TransparentFX

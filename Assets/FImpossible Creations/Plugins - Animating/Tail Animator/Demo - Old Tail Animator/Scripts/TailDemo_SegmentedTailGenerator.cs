@@ -26,15 +26,19 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
     public GameObject KendiKopyasi;//Her resim dusecegi sirada yenisi olusturulur
     private PlayerController playerController;
     private FotografController fotografController;
-
+    GameObject[] noktalar;
 
     void Awake()
     {
+        noktalar = GameObject.FindGameObjectsWithTag("Noktalar");
+
+
         KendiKopyasi = Resources.Load("Kopya") as GameObject;
         playerController = FindObjectOfType<PlayerController>();
         fotografController = FindObjectOfType<FotografController>();
         BaslangicAyarlari();
     }
+
 
 
     public void BaslangicAyarlari()
@@ -159,12 +163,12 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
 
     public void ResimDusur()
     {
-        if(SegmentsCount >= 3)
+        if (SegmentsCount >= 3)
         {
             SegmentsCount--;
             OnValidate();
         }
-        else if(SegmentsCount <= 2 && SegmentsCount >= 1)
+        else if (SegmentsCount <= 2 && SegmentsCount >= 1)
         {
             SegmentsCount--;
 
@@ -173,12 +177,11 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
             playerController.YeniTaileEris();
             fotografController.YeniTaileEris();
 
-            if(SegmentsCount >= 1)
+            if (SegmentsCount >= 1)
             {
                 obje.transform.gameObject.GetComponent<TailDemo_SegmentedTailGenerator>().FotografEkle();
             }
 
-          //  TailWithSettings.User_AddTailTransform.Remove(1);
             Destroy(this.transform.gameObject);
         }
     }
@@ -230,17 +233,17 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
                     TailWithSettings.User_AddTailTransform(segment.transform);
 
                     iTr = segment.transform;
-
                 }
             }
         }
     }
 
-   
+
 
 
     public void FotografEkle()
     {
+
         SegmentsCount++;
         if (SegmentsCount == 1)
         {
@@ -312,8 +315,6 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
 
                 tailSegments.Add(segment.transform);
             }
-
-
         }
 
         if (TailWithSettings)
@@ -329,9 +330,22 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
             TailWithSettings.User_SetTailTransforms(tailSegments);
             TailWithSettings.enabled = true;
         }
-
-
     }
 
+    public void BolumBitir()
+    {
+        TailWithSettings.enabled = false;
 
+        for (int i = 0; i < SegmentsCount; i++)
+        {
+            /*GameObject obje = transform.GetChild(0).transform.gameObject;
+            obje.transform.parent = noktalar[i].transform;
+            obje.transform.localPosition = Vector3.zero;
+            obje.transform.localRotation = Quaternion.Euler(Vector3.up * 90 + Vector3.forward * 15);*/
+
+            GameObject obje = transform.GetChild(0).transform.gameObject;
+            obje.transform.parent = noktalar[i].transform;
+            obje.GetComponent<FotoAnim>().KonumaGonder(noktalar[i].transform.position);
+        }
+    }
 }

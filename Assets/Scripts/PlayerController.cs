@@ -76,6 +76,8 @@ public class PlayerController : MonoBehaviour
             // x değerine göre oyuncunun total scoreunu hesaplıyor.. x li olmayan oyunlarda parametre olarak 1 gönderilecek.
             StartCoroutine(OyunSonuEkraniniGeciktirir());
             // normal de bu kodu x ler hesaplandıktan sonra çağıracağız. Ve bu kod çağrıldığında da kazanılan puanlar animasyonlu şekilde artacak..
+
+            tailDemo_SegmentedTailGenerator.BolumBitir();
         }
     }
 
