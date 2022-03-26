@@ -71,6 +71,7 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
     }
 
 
+
     public void ExmapleCutAt(int index)
     {
         TailAnimator2.TailSegment cutSegment = TailWithSettings.TailSegments[index];
@@ -144,6 +145,12 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
         }
     }
 
+
+    public void ResimDusur()
+    {
+
+    }
+
     bool dontReload = false;
 
     public void OnValidate()
@@ -163,37 +170,41 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
         // Refreshing tail with new settings
         if (SegmentsCount != TailWithSettings.TailSegments.Count)
         {
-
-            TailAnimator2.TailSegment refSegment = TailWithSettings.TailSegments[TailWithSettings.TailSegments.Count - 1];
-            Transform iTr = TailWithSettings.TailSegments[TailWithSettings.TailSegments.Count - 1].transform;
-
-            int toAdd = SegmentsCount - TailWithSettings.TailSegments.Count;
-
-            for (int i = 0; i < toAdd; i++)
+            if (SegmentsCount < TailWithSettings.TailSegments.Count) // Removing segments
             {
-                Vector3 targetPos = iTr.position + refSegment.ParentToFrontOffset();
-                GameObject segment = Instantiate(SegmentModel);
-                segment.transform.rotation = refSegment.transform.rotation;
-                segment.transform.localScale = refSegment.transform.lossyScale;
-                segment.transform.parent = transform;
-                segment.transform.position = targetPos;
+                //ExmapleCutAt(SegmentsCount);
+                if (TailWithSettings.TailSegments[SegmentsCount].transform)
+                    GameObject.Destroy(TailWithSettings.TailSegments[SegmentsCount].transform.gameObject);
+
+                TailWithSettings.User_CutEndSegmentsTo(SegmentsCount);
+            }
+            else
+            {
+                TailAnimator2.TailSegment refSegment = TailWithSettings.TailSegments[TailWithSettings.TailSegments.Count - 1];
+                Transform iTr = TailWithSettings.TailSegments[TailWithSettings.TailSegments.Count - 1].transform;
+
+                int toAdd = SegmentsCount - TailWithSettings.TailSegments.Count;
+
+                for (int i = 0; i < toAdd; i++)
+                {
+                    Vector3 targetPos = iTr.position + refSegment.ParentToFrontOffset();
+                    GameObject segment = Instantiate(SegmentModel);
+                    segment.transform.rotation = refSegment.transform.rotation;
+                    segment.transform.localScale = refSegment.transform.lossyScale;
+                    segment.transform.parent = transform;
+                    segment.transform.position = targetPos;
 
 
-                TailWithSettings.User_AddTailTransform(segment.transform);
+                    TailWithSettings.User_AddTailTransform(segment.transform);
 
-                iTr = segment.transform;
+                    iTr = segment.transform;
 
+                }
             }
         }
     }
 
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-            FotografEkle();
-        }
-    }
+   
 
 
     public void FotografEkle()

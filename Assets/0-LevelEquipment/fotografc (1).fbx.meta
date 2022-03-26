@@ -1,23 +1,27 @@
 fileFormatVersion: 2
-guid: 0756e513f5ceff447b6a2f4d57988284
+guid: 9d0c779d48c52c049873b483c94fc4bb
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
-      74: 897416347498962653
-    second: Sneakers|Camera|Take 001|Layer 001
+      74: -5114662410187265057
+    second: Sneakers|Sneakers|Sneakers|Camera|Take 001|Layer 001|Sneakers|Camera|Tak
   - first:
-      74: 3510388227842717530
-    second: Sneakers|Directional Light|Take 001|Layer 001
+      74: -444695842208357578
+    second: Sneakers|Sneakers|Sneakers|Directional Light|Take 001|Layer 001|Sneakers
   - first:
-      74: -6381917475265104814
-    second: Sneakers|Mesh|Take 001|Layer 001
+      74: 3320664731730443079
+    second: Sneakers|Sneakers|Sneakers|Mesh|Take 001|Layer 001|Sneakers|Mesh|Take
+      00
   - first:
-      74: 1672828383704312609
-    second: Sneakers|Sneakers|Take 001|BaseLayer
+      74: 3342133555112693168
+    second: Sneakers|Sneakers|Sneakers|Sneakers|Take 001|BaseLayer|Sneakers|Sneakers
   - first:
-      74: 8566489619317755886
-    second: Sneakers|Texture Group|Take 001|Layer 001
+      74: 1413392752380165949
+    second: Sneakers|Sneakers|Sneakers|Texture Group|Take 001|Layer 001|Sneakers|Tex
+  - first:
+      74: -203655887218126122
+    second: mixamo.com
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -31,7 +35,8 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 1
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Copied Avatar Rig Configuration mis-match. Transform hierarchy
+      does not match:\n\tTransform 'Hips' for human bone 'Hips' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -107,12 +112,12 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
-    skeletonHasParents: 1
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 
