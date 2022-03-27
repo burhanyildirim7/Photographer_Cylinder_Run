@@ -20,6 +20,8 @@ public class FotoAnim : MonoBehaviour
         baslangicPos = transform.position;
 
         donusHizi = Random.Range(300, 700);
+
+      
     }
 
     // Update is called once per frame

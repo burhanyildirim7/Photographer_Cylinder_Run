@@ -28,8 +28,12 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
     private FotografController fotografController;
     GameObject[] noktalar;
 
+    [Header("YenilmeEkraniIcin")]
+    private UIController uIController;
+
     void Awake()
     {
+        uIController = FindObjectOfType<UIController>();
         noktalar = GameObject.FindGameObjectsWithTag("Noktalar");
 
 
@@ -187,6 +191,10 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
             }
 
             Destroy(this.transform.gameObject);
+        }
+        else
+        {
+            uIController.ActivateLooseScreen();
         }
     }
 

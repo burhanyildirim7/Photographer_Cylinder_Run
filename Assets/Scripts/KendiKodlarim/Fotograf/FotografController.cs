@@ -35,26 +35,33 @@ public class FotografController : MonoBehaviour
         StartCoroutine(FotografCek());
         animasyon = player.GetComponent<Animasyon>();
         BaslangicAyarlari();
+
+        Time.timeScale = 2;
     }
 
     public void BaslangicAyarlari() //Oyun tekrar basladiginda buraya gelinir
     {
-        if (tailExampeObject.transform.parent.childCount >= 2)
+
+        if(tailExampeObject != null)
         {
-            Destroy(tailExampeObject.transform.parent.transform.GetChild(1).transform.gameObject);
+            if (tailExampeObject.transform.parent.childCount >= 2)
+            {
+                Destroy(tailExampeObject.transform.parent.transform.GetChild(1).transform.gameObject);
+            }
+
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                Destroy(transform.GetChild(i).transform.gameObject);
+            }
+
+            GameObject obje = Instantiate(tailExampeObject, tailExampeObject.transform.position, tailExampeObject.transform.rotation);
+            obje.transform.parent = tailExampeObject.transform.parent;
+            obje.SetActive(true);
+
+            tailGenerator = GameObject.FindObjectOfType<TailDemo_SegmentedTailGenerator>();
+            tailGenerator.BaslangicAyarlari();
         }
-
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            Destroy(transform.GetChild(i).transform.gameObject);
-        }
-
-        GameObject obje = Instantiate(tailExampeObject, tailExampeObject.transform.position, tailExampeObject.transform.rotation);
-        obje.transform.parent = tailExampeObject.transform.parent;
-        obje.SetActive(true);
-
-        tailGenerator = GameObject.FindObjectOfType<TailDemo_SegmentedTailGenerator>();
-        tailGenerator.BaslangicAyarlari();
+        
     }
 
     public void YeniTaileEris()
