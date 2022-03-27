@@ -54,17 +54,36 @@ public class FotoAnim : MonoBehaviour
         transform.parent.transform.gameObject.SetActive(false);
     }
 
-    public void KonumaGonder(Vector3 konum)
+
+
+    public void KonumaGonder()
     {
-        StartCoroutine(HaraketEttir(konum));
+        StartCoroutine(HaraketEttir());
+        StartCoroutine(BoyutuAyarla());
     }
 
-    IEnumerator HaraketEttir(Vector3 konum)
+    IEnumerator HaraketEttir()
     {
-        while(Vector3.Distance(transform.position, konum) >= .1f)
+        while(Vector3.Distance(transform.localPosition, Vector3.zero) >= .1f)
         {
-            transform.position = Vector3.Lerp(transform.position, konum, Time.deltaTime * 2.5f);
+            transform.localPosition = Vector3.Lerp(transform.localPosition, Vector3.zero, Time.deltaTime * 2f);
             transform.rotation = Quaternion.Slerp(transform.rotation , Quaternion.Euler(Vector3.up * 90 + Vector3.forward * 15), Time.deltaTime * 10);
+            yield return null;
+        }
+    }
+
+    IEnumerator BoyutuAyarla()
+    {
+        Vector3 baslangicBoyutu = transform.localScale;
+
+        transform.localScale *= .25f;
+
+        while(true)
+        {
+            if(transform.localScale.y <= baslangicBoyutu.y)
+            {
+                transform.localScale *= 1.015f;
+            }
             yield return null;
         }
     }

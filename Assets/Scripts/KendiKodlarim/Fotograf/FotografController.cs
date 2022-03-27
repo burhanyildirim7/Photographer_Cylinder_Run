@@ -35,9 +35,9 @@ public class FotografController : MonoBehaviour
         StartCoroutine(FotografCek());
         animasyon = player.GetComponent<Animasyon>();
         BaslangicAyarlari();
-
-        Time.timeScale = 2;
     }
+
+    
 
     public void BaslangicAyarlari() //Oyun tekrar basladiginda buraya gelinir
     {

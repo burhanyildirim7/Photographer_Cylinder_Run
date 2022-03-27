@@ -1,5 +1,6 @@
 ﻿using FIMSpace.FTail;
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 public class TailDemo_SegmentedTailGenerator : MonoBehaviour
@@ -355,6 +356,11 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
     {
         TailWithSettings.enabled = false;
 
+        StartCoroutine(SiraIleResimleriGonder());
+    }
+
+    IEnumerator SiraIleResimleriGonder()
+    {
         for (int i = 0; i < SegmentsCount; i++)
         {
             /*GameObject obje = transform.GetChild(0).transform.gameObject;
@@ -364,7 +370,9 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
 
             GameObject obje = transform.GetChild(0).transform.gameObject;
             obje.transform.parent = noktalar[i].transform;
-            obje.GetComponent<FotoAnim>().KonumaGonder(noktalar[i].transform.position);
+            obje.GetComponent<FotoAnim>().KonumaGonder();
+
+            yield return new WaitForSeconds(.125f);
         }
     }
 }
