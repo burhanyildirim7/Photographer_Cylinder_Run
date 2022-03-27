@@ -25,6 +25,9 @@ public class FotografController : MonoBehaviour
 
     private WaitForSeconds beklemeSuresei1 = new WaitForSeconds(.25f);
 
+    [Header("TailIcinDestekGelmistir")]
+    public GameObject destek;
+
 
 
     void Start()
@@ -86,7 +89,7 @@ public class FotografController : MonoBehaviour
 
 
                     Dansci dansci = hit.transform.gameObject.GetComponent<Dansci>();
-                    FotografAnimOynat(dansci.dansNumarasi);
+                    FotografAnimOynat(dansci.dansciNumarasi * 2 + dansci.dansNumarasi);
                 }
             }
             yield return beklemeSuresei1;
@@ -95,11 +98,11 @@ public class FotografController : MonoBehaviour
 
 
 
-    private IEnumerator Bekleme0(int fotografNumarasi)
+   /* private IEnumerator Bekleme0(int fotografNumarasi)
     {
         yield return new WaitForSeconds(1);
         Instantiate(fotograflar[fotografNumarasi], player.transform.position, Quaternion.identity);
-    }
+    }*/
 
 
     GameObject obje;
@@ -115,7 +118,6 @@ public class FotografController : MonoBehaviour
 
     public void FotografYerineKoy()
     {
-        // tailGenerator.SegmentModel = fotograflar[fotografNumarasi];
         tailGenerator.SegmentModel = obje.transform.GetChild(0).transform.gameObject;
         tailGenerator.FotografEkle();
     }

@@ -6,6 +6,7 @@ public class Dansci : MonoBehaviour
 {
     [Header("DansciAyarlari")]
     public int dansNumarasi;
+    public int dansciNumarasi;
 
 
     [Header("AnimasyonAyarlari")]

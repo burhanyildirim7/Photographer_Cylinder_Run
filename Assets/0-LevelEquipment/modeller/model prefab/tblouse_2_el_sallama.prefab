@@ -19669,8 +19669,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6586b53ea5b13f4eabc5fd772fc57af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  karakterNumarasi: 0
   dansNumarasi: 0
+  Pose1: {fileID: 6765479244856625737, guid: 3b508ccf58453c54181e850e69eba741, type: 3}
+  Pose2: {fileID: 6765479244856625737, guid: ff0e0391e1ad1904683541274e63952b, type: 3}
 --- !u!1 &9222606581371657872
 GameObject:
   m_ObjectHideFlags: 0

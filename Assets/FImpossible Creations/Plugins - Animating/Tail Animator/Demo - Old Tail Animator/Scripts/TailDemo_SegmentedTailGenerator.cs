@@ -188,7 +188,7 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
 
             if (SegmentsCount >= 1)
             {
-                obje.transform.gameObject.GetComponent<TailDemo_SegmentedTailGenerator>().FotografEkle();
+                obje.transform.gameObject.GetComponent<TailDemo_SegmentedTailGenerator>().SadeceIlkFotografiEkle(ilkSegment);
             }
 
             Destroy(this.transform.gameObject);
@@ -259,11 +259,8 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
     }
 
 
-
-
     public void FotografEkle()
     {
-
         SegmentsCount++;
         if (SegmentsCount == 1)
         {
@@ -277,7 +274,13 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
         {
             OnValidate();
         }
+    }
 
+    public void SadeceIlkFotografiEkle(GameObject obje)
+    {
+        SegmentsCount++;
+        SegmentModel = obje;
+        IlkResimiEkle();
     }
 
     private void IlkResimiEkle()
@@ -324,6 +327,7 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
             }
             else if (i == 1)
             {
+                fotografController.destek = SegmentModel;
                 segment = Instantiate(SegmentModel);
 
                 segment.transform.rotation = transform.rotation;
