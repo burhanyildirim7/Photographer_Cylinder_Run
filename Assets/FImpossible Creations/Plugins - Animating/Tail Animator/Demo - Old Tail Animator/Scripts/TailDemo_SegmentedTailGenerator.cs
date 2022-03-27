@@ -365,28 +365,17 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
 
     public void BolumBitir()
     {
-        TailWithSettings.enabled = false;
-        fotografController.BolumSonuFotolar();
-
-       // StartCoroutine(SiraIleResimleriGonder());
+        fotografController.BolumSonuFotolar(); //Resimlerin cikmasi icin gereklidir
     }
 
-    IEnumerator SiraIleResimleriGonder()
+    public void TailiSifirla()
     {
-        for (int i = 0; i < SegmentsCount; i++)
-        {
-            /*GameObject obje = transform.GetChild(0).transform.gameObject;
-            obje.transform.parent = noktalar[i].transform;
-            obje.transform.localPosition = Vector3.zero;
-            obje.transform.localRotation = Quaternion.Euler(Vector3.up * 90 + Vector3.forward * 15);*/
+        GameObject obje = Instantiate(KendiKopyasi, transform.position, transform.rotation); //Rotasyon sonra ayarlanabilir
+        obje.transform.parent = transform.parent;
+        playerController.YeniTaileEris();
+        fotografController.YeniTaileEris();
 
-
-            GameObject obje = transform.GetChild(0).transform.gameObject;
-            obje.transform.parent = noktalar[i].transform;
-            obje.GetComponent<FotoAnim>().KonumaGonder();
-
-
-            yield return new WaitForSeconds(.125f);
-        }
+        FotografController.resimNumaralari.Clear();
+        Destroy(this.transform.gameObject);
     }
 }

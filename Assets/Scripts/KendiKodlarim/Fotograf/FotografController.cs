@@ -27,6 +27,7 @@ public class FotografController : MonoBehaviour
     [Header("Spriteler")]
     public static List<int> resimNumaralari = new List<int>();
     [SerializeField] private Sprite[] spriteler;
+    [SerializeField] private Sprite bosSprite;
 
     private WaitForSeconds beklemeSuresei1 = new WaitForSeconds(.25f);
 
@@ -138,10 +139,16 @@ public class FotografController : MonoBehaviour
 
     IEnumerator ResimleriSiraIleYerlestir()
     {
-
-        yield return new WaitForSeconds(5);
-
+        yield return new WaitForSeconds(.6f);
         GameObject ResimCanvasi = GameObject.FindWithTag("ResimCanvasi");
+
+        for (int i = 0; i < ResimCanvasi.transform.childCount; i++)
+        {
+            ResimCanvasi.transform.GetChild(i).transform.gameObject.GetComponent<Image>().sprite = bosSprite;
+        }
+
+        yield return new WaitForSeconds(.2f);
+
 
         for (int i = 0; i < resimNumaralari.Count; i++)
         {

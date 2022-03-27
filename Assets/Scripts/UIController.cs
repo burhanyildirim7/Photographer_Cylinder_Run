@@ -67,7 +67,8 @@ public class UIController : MonoBehaviour
     // RESTART TUSUNA BASILDISINDA  --- LOOSE EKRANINDA
     public void RestartButtonClick()
     {
-       // GameObject.FindWithTag("PhotographController").GetComponent<FotografController>().BaslangicAyarlari();
+        // GameObject.FindWithTag("PhotographController").GetComponent<FotografController>().BaslangicAyarlari();
+        GameObject.FindObjectOfType<TailDemo_SegmentedTailGenerator>().TailiSifirla();
 
         GamePanel.SetActive(false);
         LoosePanel.SetActive(false);
@@ -81,6 +82,8 @@ public class UIController : MonoBehaviour
     public void NextLevelButtonClick()
     {
         GameObject.FindWithTag("PhotographController").GetComponent<FotografController>().BaslangicAyarlari();
+        GameObject.FindObjectOfType<TailDemo_SegmentedTailGenerator>().TailiSifirla();
+
 
         SetTapToStartScoreText();
         TapToStartPanel.SetActive(true);

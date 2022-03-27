@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     public bool xVarMi = true;
     public bool collectibleVarMi = true;
 
-    private WaitForSeconds beklemeSuresei1 = new WaitForSeconds(2.5f);
 
     [Header("AyarDuzenleyiciComponentler")]
     private FotografController fotografController;
@@ -88,7 +87,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator OyunSonuEkraniniGeciktirir()
     {
-        yield return beklemeSuresei1;
+        yield return new WaitForSeconds(.5f);
         UIController.instance.ActivateWinScreen(); // finish noktasına gelebildiyse her türlü win screen aktif edilecek.. ama burada değil..
     }
 

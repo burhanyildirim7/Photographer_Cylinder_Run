@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 3122817327377678269}
   - component: {fileID: 6799589842435264229}
   - component: {fileID: 874465095019855582}
+  - component: {fileID: 633310475818584469}
+  - component: {fileID: 7331276257055952351}
   m_Layer: 0
   m_Name: Obstacle-14.002
-  m_TagString: Untagged
+  m_TagString: engel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,7 +34,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5494751554511271508}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 7.764285e-16, y: 79.10449, z: 3.07409e-16}
 --- !u!33 &6799589842435264229
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -62,7 +64,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: e72ee0deaca5ce942b0109e48b8b6d69, type: 2}
-  - {fileID: 2100000, guid: 1702cf3fa0790f54682f9a29db9aa348, type: 2}
+  - {fileID: 2100000, guid: cccd131ff8b460f4c88ed298f2702189, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,6 +86,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &633310475818584469
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4946022364960868722}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.19413954, y: 2.0950427, z: 1.5891318}
+  m_Center: {x: -0.000011444092, y: 0.94249433, z: 0}
+--- !u!54 &7331276257055952351
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4946022364960868722}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &4975544661535881797
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +314,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1702cf3fa0790f54682f9a29db9aa348, type: 2}
+  - {fileID: 2100000, guid: cccd131ff8b460f4c88ed298f2702189, type: 2}
   - {fileID: 2100000, guid: e72ee0deaca5ce942b0109e48b8b6d69, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0

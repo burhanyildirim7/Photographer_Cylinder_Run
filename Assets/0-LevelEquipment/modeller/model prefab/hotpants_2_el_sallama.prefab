@@ -470,6 +470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dansNumarasi: 0
+  dansciNumarasi: 3
   Pose1: {fileID: 6765479244856625737, guid: bac426b21a4f27e448a117f1c66696aa, type: 3}
   Pose2: {fileID: 6765479244856625737, guid: de06e0ff49beeb047bac7bf67c7b3ea7, type: 3}
 --- !u!1 &264608658949005720
