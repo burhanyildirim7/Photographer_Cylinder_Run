@@ -17,6 +17,7 @@ TagManager:
   - Engel
   - Platform
   - Noktalar
+  - ResimCanvasi
   layers:
   - Default
   - TransparentFX

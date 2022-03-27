@@ -12,6 +12,10 @@ public class FotoAnim : MonoBehaviour
     public bool firlatildiMi = false;
 
     private float donusHizi;
+
+    public float fotoNumarasi;
+
+
     void Start()
     {
         fotografController = GameObject.FindObjectOfType<FotografController>();
@@ -24,13 +28,14 @@ public class FotoAnim : MonoBehaviour
       
     }
 
+
     // Update is called once per frame
     void Update()
     {
         if(firlatildiMi)
         {
             transform.Translate(Vector3.forward * Time.deltaTime * -7);
-            transform.localScale *= 1.04f;
+            transform.localScale *= 1.035f;
             transform.Rotate((/*Vector3.forward * donusHizi +*/ Vector3.up * 100) * Time.deltaTime);
 
             if(transform.localScale.y >= 2)
@@ -38,8 +43,6 @@ public class FotoAnim : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-
-        
     }
 
     public void ResimEkle()

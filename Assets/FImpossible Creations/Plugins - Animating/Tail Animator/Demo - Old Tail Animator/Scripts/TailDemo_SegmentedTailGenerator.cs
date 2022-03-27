@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TailDemo_SegmentedTailGenerator : MonoBehaviour
 {
@@ -31,6 +32,10 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
 
     [Header("YenilmeEkraniIcin")]
     private UIController uIController;
+
+    [Header("Resimler")]
+    public Sprite[] spriteler;
+
 
     void Awake()
     {
@@ -174,6 +179,7 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
 
             SegmentsCount--;
             OnValidate();
+            FotografController.resimNumaralari.Remove(FotografController.resimNumaralari.Count - 1);
         }
         else if (SegmentsCount <= 2 && SegmentsCount >= 1)
         {
@@ -191,6 +197,7 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
                 obje.transform.gameObject.GetComponent<TailDemo_SegmentedTailGenerator>().SadeceIlkFotografiEkle(ilkSegment);
             }
 
+            FotografController.resimNumaralari.Remove(FotografController.resimNumaralari.Count - 1);
             Destroy(this.transform.gameObject);
         }
         else
@@ -359,8 +366,9 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
     public void BolumBitir()
     {
         TailWithSettings.enabled = false;
+        fotografController.BolumSonuFotolar();
 
-        StartCoroutine(SiraIleResimleriGonder());
+       // StartCoroutine(SiraIleResimleriGonder());
     }
 
     IEnumerator SiraIleResimleriGonder()
@@ -372,9 +380,11 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
             obje.transform.localPosition = Vector3.zero;
             obje.transform.localRotation = Quaternion.Euler(Vector3.up * 90 + Vector3.forward * 15);*/
 
+
             GameObject obje = transform.GetChild(0).transform.gameObject;
             obje.transform.parent = noktalar[i].transform;
             obje.GetComponent<FotoAnim>().KonumaGonder();
+
 
             yield return new WaitForSeconds(.125f);
         }

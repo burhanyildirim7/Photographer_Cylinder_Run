@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firlatildiMi: 0
+  fotoNumarasi: 10
 --- !u!1 &6765479244856625737
 GameObject:
   m_ObjectHideFlags: 0

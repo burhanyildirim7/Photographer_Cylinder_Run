@@ -20395,7 +20395,7 @@ GameObject:
   - component: {fileID: 1332732839}
   m_Layer: 5
   m_Name: Resimler
-  m_TagString: Untagged
+  m_TagString: ResimCanvasi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20520,6 +20520,28 @@ MonoBehaviour:
   - {fileID: 6765479244856625737, guid: 343e180d3264db04d934d801af7aaacb, type: 3}
   - {fileID: 6765479244856625737, guid: 753e604e62316d54e8c0435fc7077242, type: 3}
   - {fileID: 6765479244856625737, guid: 05eef803992004546bc2d4694f56a75b, type: 3}
+  spriteler:
+  - {fileID: 21300000, guid: 65700d63b33ea4a47a82dd986f179457, type: 3}
+  - {fileID: 21300000, guid: 614debd4903dccc4d8bcbb6de6b81e9c, type: 3}
+  - {fileID: 21300000, guid: 036a44e79e4180c4998186ee170343d4, type: 3}
+  - {fileID: 21300000, guid: 709eaa15e88f2eb4c805803026898590, type: 3}
+  - {fileID: 21300000, guid: 085832e0dbf6fd7418acdede8c7c3f54, type: 3}
+  - {fileID: 21300000, guid: 691fdc7bf828cfa43abe6bd6d901cfdd, type: 3}
+  - {fileID: 21300000, guid: 3050ffdc8805e774597924840abec62d, type: 3}
+  - {fileID: 21300000, guid: ac83ab05309535444b3f6beb675ff7c8, type: 3}
+  - {fileID: 21300000, guid: 7fc313cc13459544b9690d288f6fa15b, type: 3}
+  - {fileID: 21300000, guid: b8f45816270cb4645b55dea344da3f14, type: 3}
+  - {fileID: 21300000, guid: cd7d2cbffbc587343a20f4fa31a18a45, type: 3}
+  - {fileID: 21300000, guid: 57368164c5e61fb48b1b6cfb23417c1b, type: 3}
+  - {fileID: 21300000, guid: 7e2576f4c2381874c9b362904533c851, type: 3}
+  - {fileID: 21300000, guid: e24c878949c208e45ac687fb21cdff1f, type: 3}
+  - {fileID: 21300000, guid: 641637514a87fd840a242899a12e5e0f, type: 3}
+  - {fileID: 21300000, guid: 68a6f9542ce13c940a9ea3433a644d4a, type: 3}
+  - {fileID: 21300000, guid: d5bf2adb04740394985384e1be5e0c69, type: 3}
+  - {fileID: 21300000, guid: 62a32cf95d7bcee4f8b06aa9e426a25a, type: 3}
+  - {fileID: 21300000, guid: 3b85f70765ba7f6409883306710e68ae, type: 3}
+  - {fileID: 21300000, guid: 52c45911519673942bfb08a28ad4bf71, type: 3}
+  destek: {fileID: 0}
 --- !u!4 &1386203166
 Transform:
   m_ObjectHideFlags: 0
@@ -65167,6 +65189,7 @@ MonoBehaviour:
   DrawGizmos: 1
   Cuttable: 1
   KendiKopyasi: {fileID: 5413471192486833122, guid: 3108b8fcea2e5624d84e020ac46001c0, type: 3}
+  spriteler: []
 --- !u!1 &5413471191988519859
 GameObject:
   m_ObjectHideFlags: 0

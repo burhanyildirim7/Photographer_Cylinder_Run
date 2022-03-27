@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FotografController : MonoBehaviour
 {
@@ -23,6 +24,10 @@ public class FotografController : MonoBehaviour
     private TailDemo_SegmentedTailGenerator tailGenerator;
     [SerializeField] private GameObject[] fotograflar;
 
+    [Header("Spriteler")]
+    public static List<int> resimNumaralari = new List<int>();
+    [SerializeField] private Sprite[] spriteler;
+
     private WaitForSeconds beklemeSuresei1 = new WaitForSeconds(.25f);
 
     [Header("TailIcinDestekGelmistir")]
@@ -38,6 +43,8 @@ public class FotografController : MonoBehaviour
         StartCoroutine(FotografCek());
         animasyon = player.GetComponent<Animasyon>();
         BaslangicAyarlari();
+
+        Time.timeScale = 2;
     }
 
     
@@ -90,6 +97,7 @@ public class FotografController : MonoBehaviour
 
                     Dansci dansci = hit.transform.gameObject.GetComponent<Dansci>();
                     FotografAnimOynat(dansci.dansciNumarasi * 2 + dansci.dansNumarasi);
+                    resimNumaralari.Add(dansci.dansciNumarasi * 2 + dansci.dansNumarasi);
                 }
             }
             yield return beklemeSuresei1;
@@ -120,5 +128,26 @@ public class FotografController : MonoBehaviour
     {
         tailGenerator.SegmentModel = obje.transform.GetChild(0).transform.gameObject;
         tailGenerator.FotografEkle();
+    }
+
+    public void BolumSonuFotolar()
+    {
+        StartCoroutine(ResimleriSiraIleYerlestir());
+        
+    }
+
+    IEnumerator ResimleriSiraIleYerlestir()
+    {
+
+        yield return new WaitForSeconds(5);
+
+        GameObject ResimCanvasi = GameObject.FindWithTag("ResimCanvasi");
+
+        for (int i = 0; i < resimNumaralari.Count; i++)
+        {
+            ResimCanvasi.transform.GetChild(i).transform.gameObject.GetComponent<Image>().sprite = spriteler[resimNumaralari[i]];
+
+            yield return new WaitForSeconds(.15f);
+        }
     }
 }

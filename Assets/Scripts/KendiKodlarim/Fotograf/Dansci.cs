@@ -85,4 +85,9 @@ public class Dansci : MonoBehaviour
         }
     }
 
+
+    public void ResimOlustur()
+    {
+
+    }
 }
