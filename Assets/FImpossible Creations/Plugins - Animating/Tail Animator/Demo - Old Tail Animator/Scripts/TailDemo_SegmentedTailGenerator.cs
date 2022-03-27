@@ -167,14 +167,12 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
         {
             ResimFirlat();
 
-
             SegmentsCount--;
             OnValidate();
         }
         else if (SegmentsCount <= 2 && SegmentsCount >= 1)
         {
             ResimFirlat();
-
 
             SegmentsCount--;
 
@@ -194,7 +192,9 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
 
     private void ResimFirlat()
     {
-        
+        GameObject obje = Instantiate(transform.GetChild(SegmentsCount - 1).transform.gameObject, transform.GetChild(SegmentsCount - 1).transform.position, Quaternion.Euler(Vector3.forward * 90 + Vector3.right * Random.Range(60,70))); //Yeni obje olusturulmasinin sebebi tail kodlari ile cakismamasi icindir
+        FotoAnim fotoAnim = obje.transform.gameObject.GetComponent<FotoAnim>();
+        fotoAnim.firlatildiMi = true;
     }
 
     bool dontReload = false;
