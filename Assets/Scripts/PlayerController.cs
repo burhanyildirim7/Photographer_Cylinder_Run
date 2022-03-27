@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
     [Header("ResimAyarlari")]
     private TailDemo_SegmentedTailGenerator tailDemo_SegmentedTailGenerator;
 
+    [Header("Animasyon")]
+    private Animator anim;
+
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -29,6 +32,7 @@ public class PlayerController : MonoBehaviour
         fotografController = GameObject.FindObjectOfType<FotografController>();
         animasyon = GameObject.FindObjectOfType<Animasyon>();
         karakterPaketiMovement = GameObject.FindObjectOfType<KarakterPaketiMovement>();
+        anim = animasyon.transform.gameObject.transform.GetChild(0).GetComponent<Animator>();
     }
 
     void Start()
@@ -63,8 +67,9 @@ public class PlayerController : MonoBehaviour
               }*/
 
             tailDemo_SegmentedTailGenerator.ResimDusur(); //Eğer 3 veya daha fazla resim varsa yeni resim olusturulur
+            anim.SetTrigger("SavrulmaP");
         }
-        else if (other.CompareTag("finish")) 
+        else if (other.CompareTag("finish"))
         {
             animasyon.OyunSonuAyari();
             karakterPaketiMovement.kosuDurumu = false;

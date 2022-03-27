@@ -165,11 +165,17 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
     {
         if (SegmentsCount >= 3)
         {
+            ResimFirlat();
+
+
             SegmentsCount--;
             OnValidate();
         }
         else if (SegmentsCount <= 2 && SegmentsCount >= 1)
         {
+            ResimFirlat();
+
+
             SegmentsCount--;
 
             GameObject obje = Instantiate(KendiKopyasi, transform.position, transform.rotation); //Rotasyon sonra ayarlanabilir
@@ -184,6 +190,11 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
 
             Destroy(this.transform.gameObject);
         }
+    }
+
+    private void ResimFirlat()
+    {
+        
     }
 
     bool dontReload = false;

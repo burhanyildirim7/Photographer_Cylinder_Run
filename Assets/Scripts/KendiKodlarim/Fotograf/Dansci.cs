@@ -67,7 +67,7 @@ public class Dansci : MonoBehaviour
     {
         while(!posVerildiMi)
         {
-            if(Vector3.Distance(transform.position, player.transform.position) <= 10)
+            if(Vector3.Distance(transform.position, player.transform.position) <= 14)
             {
                 posVerildiMi = true;
 
