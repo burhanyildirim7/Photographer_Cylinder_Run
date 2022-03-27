@@ -16,17 +16,17 @@ public class Finish : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             StartCoroutine(efektOynat());
-            Debug.Log("A");
         }
     }
 
     IEnumerator efektOynat()
     {
+        yield return new WaitForSeconds(.25f);
 
         for (int i = 0; i < efekt.Length; i++)
         {
             efekt[i].Play();
-            yield return new WaitForSeconds(.35f);
+            yield return new WaitForSeconds(.5f);
         }
     }
 }

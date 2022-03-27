@@ -45,7 +45,7 @@ public class FotografController : MonoBehaviour
         animasyon = player.GetComponent<Animasyon>();
         BaslangicAyarlari();
 
-        Time.timeScale = 2;
+      //  Time.timeScale = 2;
     }
 
     
