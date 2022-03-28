@@ -44,8 +44,6 @@ public class FotografController : MonoBehaviour
         StartCoroutine(FotografCek());
         animasyon = player.GetComponent<Animasyon>();
         BaslangicAyarlari();
-
-        Time.timeScale = 2;
     }
 
     
