@@ -67,6 +67,8 @@ public class PlayerController : MonoBehaviour
 
             tailDemo_SegmentedTailGenerator.ResimDusur(); //Eğer 3 veya daha fazla resim varsa yeni resim olusturulur
             anim.SetTrigger("SavrulmaP");
+
+            MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
         }
         else if (other.CompareTag("finish"))
         {

@@ -179,7 +179,7 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
 
             SegmentsCount--;
             OnValidate();
-            FotografController.resimNumaralari.Remove(FotografController.resimNumaralari.Count - 1);
+            FotografController.resimNumaralari.RemoveAt(FotografController.resimNumaralari.Count - 1);
         }
         else if (SegmentsCount <= 2 && SegmentsCount >= 1)
         {
@@ -197,7 +197,7 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
                 obje.transform.gameObject.GetComponent<TailDemo_SegmentedTailGenerator>().SadeceIlkFotografiEkle(ilkSegment);
             }
 
-            FotografController.resimNumaralari.Remove(FotografController.resimNumaralari.Count - 1);
+            FotografController.resimNumaralari.RemoveAt(FotografController.resimNumaralari.Count - 1);
             Destroy(this.transform.gameObject);
         }
         else

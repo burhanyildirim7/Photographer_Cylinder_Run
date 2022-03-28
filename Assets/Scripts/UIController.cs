@@ -96,7 +96,11 @@ public class UIController : MonoBehaviour
 
         for (int i = 0; i < objeler.Length; i++)
         {
-            Destroy(objeler[i].transform.GetChild(0).transform.gameObject);
+            if(objeler[i].transform.childCount >= 1)
+            {
+                Destroy(objeler[i].transform.GetChild(0).transform.gameObject);
+            }
+            
         }
     }
 

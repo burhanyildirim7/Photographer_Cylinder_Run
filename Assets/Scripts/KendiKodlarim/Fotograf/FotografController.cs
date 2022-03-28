@@ -99,19 +99,13 @@ public class FotografController : MonoBehaviour
                     Dansci dansci = hit.transform.gameObject.GetComponent<Dansci>();
                     FotografAnimOynat(dansci.dansciNumarasi * 2 + dansci.dansNumarasi);
                     resimNumaralari.Add(dansci.dansciNumarasi * 2 + dansci.dansNumarasi);
+
+                    MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
                 }
             }
             yield return beklemeSuresei1;
         }
     }
-
-
-
-   /* private IEnumerator Bekleme0(int fotografNumarasi)
-    {
-        yield return new WaitForSeconds(1);
-        Instantiate(fotograflar[fotografNumarasi], player.transform.position, Quaternion.identity);
-    }*/
 
 
     GameObject obje;
@@ -129,6 +123,7 @@ public class FotografController : MonoBehaviour
     {
         tailGenerator.SegmentModel = obje.transform.GetChild(0).transform.gameObject;
         tailGenerator.FotografEkle();
+        GameController.instance.SetScore(10);
     }
 
     public void BolumSonuFotolar()
@@ -139,7 +134,7 @@ public class FotografController : MonoBehaviour
 
     IEnumerator ResimleriSiraIleYerlestir()
     {
-        yield return new WaitForSeconds(.6f);
+        yield return new WaitForSeconds(.51f);
         GameObject ResimCanvasi = GameObject.FindWithTag("ResimCanvasi");
 
         for (int i = 0; i < ResimCanvasi.transform.childCount; i++)
