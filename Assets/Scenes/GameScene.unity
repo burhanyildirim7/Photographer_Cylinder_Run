@@ -1940,6 +1940,7 @@ MonoBehaviour:
   collectibleDegeri: 10
   xVarMi: 1
   collectibleVarMi: 1
+  engelCarpmaEfekt: {fileID: 7244051967357206744, guid: e93e4456640f00a439221541b7025cec, type: 3}
 --- !u!54 &1443049515
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8267,7 +8268,6 @@ MonoBehaviour:
   DrawGizmos: 1
   Cuttable: 1
   KendiKopyasi: {fileID: 5413471192486833122, guid: 3108b8fcea2e5624d84e020ac46001c0, type: 3}
-  spriteler: []
 --- !u!1 &5413471191988519859
 GameObject:
   m_ObjectHideFlags: 0

@@ -134,6 +134,7 @@ public class FotografController : MonoBehaviour
 
     IEnumerator ResimleriSiraIleYerlestir()
     {
+        
         yield return new WaitForSeconds(.51f);
         GameObject ResimCanvasi = GameObject.FindWithTag("ResimCanvasi");
 
@@ -142,8 +143,9 @@ public class FotografController : MonoBehaviour
             ResimCanvasi.transform.GetChild(i).transform.gameObject.GetComponent<Image>().sprite = bosSprite;
         }
 
+        
         yield return new WaitForSeconds(.2f);
-
+        tailGenerator.TailiYokEt();
 
         for (int i = 0; i < resimNumaralari.Count; i++)
         {

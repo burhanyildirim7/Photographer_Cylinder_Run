@@ -33,9 +33,6 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
     [Header("YenilmeEkraniIcin")]
     private UIController uIController;
 
-    [Header("Resimler")]
-    public Sprite[] spriteler;
-
 
     void Awake()
     {
@@ -376,6 +373,16 @@ public class TailDemo_SegmentedTailGenerator : MonoBehaviour
         fotografController.YeniTaileEris();
 
         FotografController.resimNumaralari.Clear();
+        Destroy(this.transform.gameObject);
+    }
+
+    public void TailiYokEt()
+    {
+        GameObject obje = Instantiate(KendiKopyasi, transform.position, transform.rotation); //Rotasyon sonra ayarlanabilir
+        obje.transform.parent = transform.parent;
+        playerController.YeniTaileEris();
+        fotografController.YeniTaileEris();
+
         Destroy(this.transform.gameObject);
     }
 }
