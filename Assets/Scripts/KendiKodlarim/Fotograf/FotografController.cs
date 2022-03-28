@@ -46,6 +46,7 @@ public class FotografController : MonoBehaviour
         BaslangicAyarlari();
 
         Time.timeScale = 2;
+
     }
 
     
@@ -123,13 +124,12 @@ public class FotografController : MonoBehaviour
     {
         tailGenerator.SegmentModel = obje.transform.GetChild(0).transform.gameObject;
         tailGenerator.FotografEkle();
-        GameController.instance.SetScore(10);
     }
 
     public void BolumSonuFotolar()
     {
         StartCoroutine(ResimleriSiraIleYerlestir());
-        
+        GameController.instance.SetScore(resimNumaralari.Count * 100);
     }
 
     IEnumerator ResimleriSiraIleYerlestir()
@@ -148,8 +148,9 @@ public class FotografController : MonoBehaviour
         for (int i = 0; i < resimNumaralari.Count; i++)
         {
             ResimCanvasi.transform.GetChild(i).transform.gameObject.GetComponent<Image>().sprite = spriteler[resimNumaralari[i]];
+            ResimCanvasi.transform.GetChild(i).transform.gameObject.GetComponent<SpriteControll>().SpriteAyarlari();
 
-            yield return new WaitForSeconds(.15f);
+            yield return new WaitForSeconds(.35f);
         }
     }
 }

@@ -31,7 +31,12 @@ public class GameController : MonoBehaviour
     /// <param name="eklenecekScore">Her collectible da ne kadar score eklenip cikarilacaksa parametre olarak o sayi verilmeli</param>
     public void SetScore(int eklenecekScore)
 	{
-        if(PlayerController.instance.collectibleVarMi) score += eklenecekScore;
+        if (PlayerController.instance.collectibleVarMi)
+        {
+            score += eklenecekScore;
+        }
+
+   
         // Eðer oyunda collectible yok ise developer kendi score sistemini yazmalý...
 
     }
