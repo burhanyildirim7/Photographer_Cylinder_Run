@@ -662,6 +662,9 @@ MonoBehaviour:
   - {fileID: 4358687438776616636, guid: 8e54133cd24d6524ba91588762707107, type: 3}
   - {fileID: 4358687438776616636, guid: 575b388eb70c6c743a62e8e29cdac121, type: 3}
   - {fileID: 4358687438776616636, guid: 83c47698c47126b4ba1410b6bfe8d7ac, type: 3}
+  spriteler: []
+  bosSprite: {fileID: 0}
+  destek: {fileID: 0}
 --- !u!4 &1386203166
 Transform:
   m_ObjectHideFlags: 0
@@ -1073,6 +1076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  kosuDurumu: 0
 --- !u!1 &2063141234
 GameObject:
   m_ObjectHideFlags: 0
@@ -4129,10 +4133,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LEVEL1
       objectReference: {fileID: 0}
-    - target: {fileID: 6071949542408724970, guid: f809eaf26d1ac7d419fe6bc0a1bfb3c1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f809eaf26d1ac7d419fe6bc0a1bfb3c1, type: 3}
 --- !u!1 &2070661309882696310
@@ -4278,10 +4278,6 @@ PrefabInstance:
     - target: {fileID: 4871739129470631390, guid: 223acfaf707ef034e9698e19b2d19ddb, type: 3}
       propertyPath: m_Name
       value: LEVEL3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4871739129470631390, guid: 223acfaf707ef034e9698e19b2d19ddb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4871739129470631391, guid: 223acfaf707ef034e9698e19b2d19ddb, type: 3}
       propertyPath: m_RootOrder
@@ -5249,6 +5245,8 @@ MonoBehaviour:
   AddTailAnimToCuttedSegment: 1
   DrawGizmos: 1
   Cuttable: 1
+  KendiKopyasi: {fileID: 0}
+  spriteler: []
 --- !u!1 &5413471191988519859
 GameObject:
   m_ObjectHideFlags: 0
@@ -8973,10 +8971,6 @@ PrefabInstance:
     - target: {fileID: 7275335757063977089, guid: b9d40ea340f700f4ab5e198c54703851, type: 3}
       propertyPath: m_Name
       value: LEVEL2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7275335757063977089, guid: b9d40ea340f700f4ab5e198c54703851, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7275335757063977090, guid: b9d40ea340f700f4ab5e198c54703851, type: 3}
       propertyPath: m_RootOrder
