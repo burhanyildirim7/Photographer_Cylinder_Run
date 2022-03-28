@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     [Header("Animasyon")]
     private Animator anim;
 
+    [SerializeField] private ParticleSystem engelCarpmaEfekt;
+
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -68,6 +70,9 @@ public class PlayerController : MonoBehaviour
             tailDemo_SegmentedTailGenerator.ResimDusur(); //Eğer 3 veya daha fazla resim varsa yeni resim olusturulur
             anim.SetTrigger("SavrulmaP");
 
+
+            ParticleSystem efekt = Instantiate(engelCarpmaEfekt ,transform.position + Vector3.forward * .25f, Quaternion.identity);
+            efekt.Play();
             MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
         }
         else if (other.CompareTag("finish"))

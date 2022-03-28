@@ -938,3 +938,4 @@ MonoBehaviour:
   DrawGizmos: 1
   Cuttable: 1
   KendiKopyasi: {fileID: 5413471192486833122}
+  fotoCikmaEfekt: {fileID: 640236769786826250, guid: 83bb2b3d87a78da40a1a0115d062ec93, type: 3}

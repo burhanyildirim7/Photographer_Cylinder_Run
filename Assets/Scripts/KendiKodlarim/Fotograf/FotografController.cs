@@ -46,7 +46,6 @@ public class FotografController : MonoBehaviour
         BaslangicAyarlari();
 
         Time.timeScale = 2;
-
     }
 
     
@@ -115,6 +114,7 @@ public class FotografController : MonoBehaviour
     public void FotografAnimOynat(int fotografNumarasi)
     {
         obje = Instantiate(fotograflar[fotografNumarasi], player.transform.position, Quaternion.identity);
+        obje.transform.parent = GameObject.FindWithTag("finish").transform.root;
         animObje = obje.transform.GetChild(0).GetComponent<Animation>();
         animObje.Play("fotograf");
     }
@@ -134,6 +134,7 @@ public class FotografController : MonoBehaviour
 
     IEnumerator ResimleriSiraIleYerlestir()
     {
+        
         yield return new WaitForSeconds(.51f);
         GameObject ResimCanvasi = GameObject.FindWithTag("ResimCanvasi");
 
@@ -142,15 +143,16 @@ public class FotografController : MonoBehaviour
             ResimCanvasi.transform.GetChild(i).transform.gameObject.GetComponent<Image>().sprite = bosSprite;
         }
 
+        
         yield return new WaitForSeconds(.2f);
-
+        tailGenerator.TailiYokEt();
 
         for (int i = 0; i < resimNumaralari.Count; i++)
         {
             ResimCanvasi.transform.GetChild(i).transform.gameObject.GetComponent<Image>().sprite = spriteler[resimNumaralari[i]];
             ResimCanvasi.transform.GetChild(i).transform.gameObject.GetComponent<SpriteControll>().SpriteAyarlari();
 
-            yield return new WaitForSeconds(.35f);
+            yield return new WaitForSeconds(.7f);
         }
     }
 }

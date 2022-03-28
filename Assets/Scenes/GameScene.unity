@@ -226,7 +226,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 61c55d016a7a28d4ab3528d1ac18009c, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &326513068
@@ -789,7 +789,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 61c55d016a7a28d4ab3528d1ac18009c, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &764043841
@@ -895,7 +895,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 61c55d016a7a28d4ab3528d1ac18009c, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &780068668
@@ -1032,7 +1032,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 61c55d016a7a28d4ab3528d1ac18009c, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &822675375
@@ -1138,7 +1138,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 61c55d016a7a28d4ab3528d1ac18009c, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &955729541
@@ -1431,7 +1431,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 61c55d016a7a28d4ab3528d1ac18009c, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &1124119772
@@ -1584,7 +1584,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 61c55d016a7a28d4ab3528d1ac18009c, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &1149855913
@@ -1940,6 +1940,7 @@ MonoBehaviour:
   collectibleDegeri: 10
   xVarMi: 1
   collectibleVarMi: 1
+  engelCarpmaEfekt: {fileID: 7244051967357206744, guid: e93e4456640f00a439221541b7025cec, type: 3}
 --- !u!54 &1443049515
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2145,7 +2146,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 61c55d016a7a28d4ab3528d1ac18009c, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &1557323916
@@ -2251,7 +2252,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 61c55d016a7a28d4ab3528d1ac18009c, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &1728866536
@@ -2388,7 +2389,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 61c55d016a7a28d4ab3528d1ac18009c, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &1994317953
@@ -6186,7 +6187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &2070661309882696310
 GameObject:
   m_ObjectHideFlags: 0
@@ -8267,7 +8268,6 @@ MonoBehaviour:
   DrawGizmos: 1
   Cuttable: 1
   KendiKopyasi: {fileID: 5413471192486833122, guid: 3108b8fcea2e5624d84e020ac46001c0, type: 3}
-  spriteler: []
 --- !u!1 &5413471191988519859
 GameObject:
   m_ObjectHideFlags: 0
