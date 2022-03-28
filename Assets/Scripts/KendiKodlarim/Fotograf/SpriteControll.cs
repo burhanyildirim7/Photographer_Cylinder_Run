@@ -24,15 +24,12 @@ public class SpriteControll : MonoBehaviour
     IEnumerator SpriteKonumaGonder()
     {
         anim.Play("Sprite");
-        yield return new WaitForSeconds(.25f);
+        yield return new WaitForSeconds(.5f);
 
         while (Vector2.Distance(transform.position, hedef) >= .2f)
         {
             transform.position = Vector2.Lerp(transform.position, hedef, Time.deltaTime * 25);
             yield return null;
         }
-
     }
-
-
 }

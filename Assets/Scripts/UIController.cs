@@ -96,11 +96,11 @@ public class UIController : MonoBehaviour
 
         for (int i = 0; i < objeler.Length; i++)
         {
-            if(objeler[i].transform.childCount >= 1)
+            if (objeler[i].transform.childCount >= 1)
             {
                 Destroy(objeler[i].transform.GetChild(0).transform.gameObject);
             }
-            
+
         }
     }
 
@@ -110,6 +110,7 @@ public class UIController : MonoBehaviour
     /// </summary>
     public void SetGamePlayScoreText()
     {
+        
         gamePlayScoreText.text = PlayerPrefs.GetInt("totalScore").ToString();
     }
 
@@ -119,6 +120,7 @@ public class UIController : MonoBehaviour
     /// </summary>
     public void SetTapToStartScoreText()
     {
+        PlayerPrefs.SetInt("totalScore", PlayerPrefs.GetInt("totalScore") + GameController.instance.score);
         tapToStartScoreText.text = PlayerPrefs.GetInt("totalScore").ToString();
     }
 
@@ -262,7 +264,8 @@ public class UIController : MonoBehaviour
         WinPanel.SetActive(false);
         LoosePanel.SetActive(false);
         GamePanel.SetActive(false);
-        tapToStartScoreText.text = PlayerPrefs.GetInt("total").ToString();
+        //  tapToStartScoreText.text = PlayerPrefs.GetInt("total").ToString();
+        tapToStartScoreText.text = PlayerPrefs.GetInt("totalScore").ToString();
     }
 
 

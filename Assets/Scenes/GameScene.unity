@@ -226,7 +226,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 61c55d016a7a28d4ab3528d1ac18009c, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &326513068
@@ -789,7 +789,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 61c55d016a7a28d4ab3528d1ac18009c, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &764043841
@@ -895,7 +895,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 61c55d016a7a28d4ab3528d1ac18009c, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &780068668
@@ -1032,7 +1032,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 61c55d016a7a28d4ab3528d1ac18009c, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &822675375
@@ -1138,7 +1138,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 61c55d016a7a28d4ab3528d1ac18009c, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &955729541
@@ -1431,7 +1431,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 61c55d016a7a28d4ab3528d1ac18009c, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &1124119772
@@ -1584,7 +1584,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 61c55d016a7a28d4ab3528d1ac18009c, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &1149855913
@@ -2145,7 +2145,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 61c55d016a7a28d4ab3528d1ac18009c, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &1557323916
@@ -2251,7 +2251,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 61c55d016a7a28d4ab3528d1ac18009c, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &1728866536
@@ -2388,7 +2388,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 61c55d016a7a28d4ab3528d1ac18009c, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &1994317953
@@ -6186,7 +6186,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &2070661309882696310
 GameObject:
   m_ObjectHideFlags: 0

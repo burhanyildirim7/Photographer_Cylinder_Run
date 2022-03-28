@@ -17,6 +17,7 @@ public class Animasyon : MonoBehaviour
 
     public void BaslangicAnimasyonAyari()  //UIController/TapToStart() 
     {
+        anim.ResetTrigger("SavrulmaP");
         anim.SetBool("KosmaP", true);
     }
 
