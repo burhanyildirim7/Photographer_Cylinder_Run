@@ -29,7 +29,7 @@ public class FotografController : MonoBehaviour
     [SerializeField] private Sprite[] spriteler;
     [SerializeField] private Sprite bosSprite;
 
-    private WaitForSeconds beklemeSuresei1 = new WaitForSeconds(.25f);
+    private WaitForSeconds beklemeSuresei1 = new WaitForSeconds(.05f);
 
     [Header("TailIcinDestekGelmistir")]
     public GameObject destek;
