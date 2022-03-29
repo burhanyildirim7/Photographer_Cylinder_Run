@@ -34,12 +34,15 @@ public class FotografController : MonoBehaviour
     [Header("TailIcinDestekGelmistir")]
     public GameObject destek;
 
+    [Header("PlatformHaraketiIcin")]
+    private Platform platform;
+
 
 
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        karakterPaketiMovement = GameObject.FindObjectOfType<KarakterPaketiMovement>(); 
+        karakterPaketiMovement = GameObject.FindObjectOfType<KarakterPaketiMovement>();
 
         StartCoroutine(FotografCek());
         animasyon = player.GetComponent<Animasyon>();
@@ -69,6 +72,7 @@ public class FotografController : MonoBehaviour
 
             tailGenerator = GameObject.FindObjectOfType<TailDemo_SegmentedTailGenerator>();
             tailGenerator.BaslangicAyarlari();
+            
         }
         
     }
@@ -99,6 +103,11 @@ public class FotografController : MonoBehaviour
                     resimNumaralari.Add(dansci.dansciNumarasi * 2 + dansci.dansNumarasi);
 
                     MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+                    if(platform == null)
+                    {
+                        platform = GameObject.FindObjectOfType<Platform>();
+                    }
+                    platform.HaraketiDurdur(); //Platformun haraketini duzenler
                 }
             }
             yield return beklemeSuresei1;
