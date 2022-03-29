@@ -42,7 +42,6 @@ public class Platform : MonoBehaviour
             rotasyonKatSayi = lastPositionX - currentPositionX;
             lastPositionX = Input.mousePosition.x;
             transform.Rotate(Vector3.forward * rotasyonKatSayi * Time.deltaTime * donusHizi);
-            Debug.Log(rotasyonKatSayi);
         }
 
         if (Input.GetMouseButtonUp(0))
