@@ -11,8 +11,11 @@ public class GameController : MonoBehaviour
 
     [HideInInspector] public bool isContinue;  // ayrintilar icin beni oku 19. satirdan itibaren bak
 
+    public float platformDonusHizi;
 
-	private void Awake()
+
+
+    private void Awake()
 	{
         if (instance == null) instance = this;
         //else Destroy(this);

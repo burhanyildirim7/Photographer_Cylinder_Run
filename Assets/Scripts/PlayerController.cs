@@ -67,6 +67,7 @@ public class PlayerController : MonoBehaviour
                   // oyuncu fail durumunda bu fonksiyon çağrılacak.. 
               }*/
 
+            other.transform.gameObject.GetComponent<BoxCollider>().enabled = false;
             tailDemo_SegmentedTailGenerator.ResimDusur(); //Eğer 3 veya daha fazla resim varsa yeni resim olusturulur
             anim.SetTrigger("SavrulmaP");
 
