@@ -32,10 +32,10 @@ public class Dansci : MonoBehaviour
 
         posVerildiMi = false;
 
-        
 
 
-        if(Random.Range(0,2) == 0)
+
+        if (Random.Range(0, 2) == 0)
         {
             dansNumarasi = 0;
         }
@@ -51,32 +51,32 @@ public class Dansci : MonoBehaviour
     }
 
 
-  /*  private void KarakteriZemineGoreCevir()
-    {
-        if (Physics.Raycast(transform.position, Vector3.up * (platform.transform.position.y - transform.position.y) + Vector3.right * (platform.transform.position.x - transform.position.x), out hit, Mathf.Infinity))
-        {
-            if (hit.transform.gameObject.CompareTag("Platform"))
-            {
-                transform.position = hit.point;
-                transform.rotation = Quaternion.FromToRotation(transform.right, hit.normal) * transform.rotation;
-            }
-        }
-    }*/
+    /*  private void KarakteriZemineGoreCevir()
+      {
+          if (Physics.Raycast(transform.position, Vector3.up * (platform.transform.position.y - transform.position.y) + Vector3.right * (platform.transform.position.x - transform.position.x), out hit, Mathf.Infinity))
+          {
+              if (hit.transform.gameObject.CompareTag("Platform"))
+              {
+                  transform.position = hit.point;
+                  transform.rotation = Quaternion.FromToRotation(transform.right, hit.normal) * transform.rotation;
+              }
+          }
+      }*/
 
 
     IEnumerator UzaklikKontrol()
     {
-        while(!posVerildiMi)
+        while (!posVerildiMi)
         {
-            if(Vector3.Distance(transform.position, player.transform.position) <= 14)
+            if (Vector3.Distance(transform.position, player.transform.position) <= 10)
             {
                 posVerildiMi = true;
 
-                if(dansNumarasi == 0)
+                if (dansNumarasi == 0)
                 {
                     anim.SetBool("Pose1", true);
                 }
-                else if(dansNumarasi == 1)
+                else if (dansNumarasi == 1)
                 {
                     anim.SetBool("Pose2", true);
                 }
